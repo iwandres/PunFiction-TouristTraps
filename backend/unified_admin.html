@@ -1270,7 +1270,7 @@
                     <h2>🌭 Location Pun Candidates</h2>
                     <div style="display: flex; gap: 10px;">
                         <button class="btn btn-secondary" onclick="tt_generatePuns()">⚡ Generate Puns (Gemini)</button>
-                        <button class="btn btn-primary" onclick="tt_saveData('puns', tt_puns)">💾 Save Puns</button>
+                        <button class="btn btn-primary" onclick="tt_savePuns()">💾 Save Puns</button>
                     </div>
                 </div>
                 <div class="item-list" id="tt_puns-list"></div>
@@ -1284,7 +1284,7 @@
                     <h2>✍️ progressive Clues Generator</h2>
                     <div style="display: flex; gap: 10px;">
                         <button class="btn btn-secondary" onclick="tt_generateClues()">⚡ Generate Clues (Gemini)</button>
-                        <button class="btn btn-primary" onclick="tt_saveData('clues', tt_clues)">💾 Save Clues</button>
+                        <button class="btn btn-primary" onclick="tt_saveClues()">💾 Save Clues</button>
                     </div>
                 </div>
                 <div class="item-list" id="tt_clues-list"></div>
@@ -1310,7 +1310,7 @@
                             </select>
                         </div>
                         <button class="btn btn-secondary" onclick="tt_generatePostcards()">⚡ Generate Postcards</button>
-                        <button class="btn btn-primary" onclick="tt_saveData('postcards', tt_postcards)">💾 Save Postcards</button>
+                        <button class="btn btn-primary" onclick="tt_savePostcards()">💾 Save Postcards</button>
                     </div>
                 </div>
                 <div class="item-list" id="tt_postcards-list"></div>
@@ -3669,6 +3669,24 @@
                 tt_saveData('tt_puns', tt_puns);
                 tt_renderPuns();
             }
+        }
+
+        function tt_savePuns() {
+            tt_puns = tt_puns.filter(p => p.status !== 'rejected');
+            tt_saveData('tt_puns', tt_puns);
+            tt_renderPuns();
+        }
+
+        function tt_saveClues() {
+            tt_clues = tt_clues.filter(c => c.status !== 'rejected');
+            tt_saveData('tt_clues', tt_clues);
+            tt_renderClues();
+        }
+
+        function tt_savePostcards() {
+            tt_postcards = tt_postcards.filter(p => p.status !== 'rejected');
+            tt_saveData('tt_postcards', tt_postcards);
+            tt_renderPostcards();
         }
 
         function tt_renderClues() {
