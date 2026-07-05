@@ -708,10 +708,11 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                     The player needs to guess a location pun.
                     The target location pun name is: "{p['pun_name']}" (which is a pun on the real landmark "{p['original_name']}").
                     
-                    Your job is to generate 3 progressive clues (reviews) complaining about this location in an unhinged, comedic way:
-                    - Clue 1: An absurd, comical complaint that—while unhinged—includes a subtle, clever hint referencing both the original landmark/location and the wordplay of the pun, giving players a fair chance to solve the puzzle on the very first clue.
-                    - Clue 2: An additional comical complaint providing more details/hints about either the original landmark's actual features/location or the wordplay behind the pun.
-                    - Clue 3: A final comical complaint that makes the connection between the original landmark and the pun name very obvious (without explicitly naming either).
+                    Your job is to generate 3 progressive clues (reviews) complaining about this location in an unhinged, comedic way.
+                    CRITICAL CONSTRAINT: Each clue MUST be a very short snippet, phrase, or sentence fragment (under 12-15 words). You can use sentence fragments noted/separated using '...' or similar punctuation (e.g., 'So drafty... holes everywhere... completely non-functional!'). Do NOT write long paragraphs or multiple full sentences.
+                    - Clue 1: An absurd, comical snippet or sentence fragment that includes a subtle, clever hint referencing both the original landmark/location and the wordplay of the pun, giving players a fair chance to solve the puzzle on the very first clue.
+                    - Clue 2: Another short comical snippet or sentence fragment providing additional details/hints about either the original landmark's actual features/location or the wordplay behind the pun.
+                    - Clue 3: A final short comical snippet or sentence fragment that makes the connection between the original landmark and the pun name very obvious (without explicitly naming either).
                     
                     Also generate a funny review title.
                     Also generate a funny Reviewer Username (reviewer_name) that is thematically related to the parodied location or the complaint (e.g., 'SyrupSlinger' for Waffle Tower, 'SoggySouffle' for Eiffel Shower, 'BitterSingle' for Lover Museum). Do not include the '@' symbol in the JSON value.
@@ -725,7 +726,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                     Actual Landmark: Eiffel Tower
                     Pun Name: Eiffel Towel
                     Reviewer Username: DampCroissant
-                    Reviewer Complaint: "Tried to dry off after my shower with it, but it's made of wrought iron and completely non-absorbent."
+                    Reviewer Complaint: "Too drafty... holes everywhere... tried to dry off after my shower but it's made of wrought iron!"
                     Response from the Owner: "Listen, @DampCroissant, if you are using 10,000 tons of 19th-century iron to dry your hair, you have significantly bigger problems than a slight draft."
                     
                     Return a JSON object matching exactly this schema:
