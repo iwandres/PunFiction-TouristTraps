@@ -1,0 +1,163 @@
+[
+  {
+    "id": "pun_eiffel_tower_1783281643_844",
+    "original_name": "Eiffel Tower",
+    "location": "Paris, France",
+    "pun_name": "Eyeful Tower",
+    "status": "approved"
+  },
+  {
+    "id": "pun_eiffel_tower_1783281643_147",
+    "original_name": "Eiffel Tower",
+    "location": "Paris, France",
+    "pun_name": "Baffle Tower",
+    "status": "approved"
+  },
+  {
+    "id": "pun_great_wall_of_china_1783281646_252",
+    "original_name": "Great Wall of China",
+    "location": "Huairou, China",
+    "pun_name": "Great Waffle of China",
+    "status": "approved"
+  },
+  {
+    "id": "pun_great_wall_of_china_1783281646_295",
+    "original_name": "Great Wall of China",
+    "location": "Huairou, China",
+    "pun_name": "Great Whale of China",
+    "status": "approved"
+  },
+  {
+    "id": "pun_taj_mahal_1783281654_846",
+    "original_name": "Taj Mahal",
+    "location": "Agra, India",
+    "pun_name": "Taj Ma-Haul",
+    "status": "approved"
+  },
+  {
+    "id": "pun_taj_mahal_1783281654_245",
+    "original_name": "Taj Mahal",
+    "location": "Agra, India",
+    "pun_name": "Jazz Mahal",
+    "status": "approved"
+  },
+  {
+    "id": "pun_machu_picchu_1783281661_502",
+    "original_name": "Machu Picchu",
+    "location": "Cusco Region, Peru",
+    "pun_name": "Macho Picchu",
+    "status": "approved"
+  },
+  {
+    "id": "pun_machu_picchu_1783281661_692",
+    "original_name": "Machu Picchu",
+    "location": "Cusco Region, Peru",
+    "pun_name": "My Shoe Picchu",
+    "status": "approved"
+  },
+  {
+    "id": "pun_statue_of_liberty_1783282169_333",
+    "original_name": "Statue of Liberty",
+    "location": "New York, USA",
+    "pun_name": "Statue of Liver Tea",
+    "status": "approved"
+  },
+  {
+    "id": "pun_statue_of_liberty_1783282169_216",
+    "original_name": "Statue of Liberty",
+    "location": "New York, USA",
+    "pun_name": "Stash-you of Liberty",
+    "status": "approved"
+  },
+  {
+    "id": "pun_pyramids_of_giza_1783282174_215",
+    "original_name": "Pyramids of Giza",
+    "location": "Giza, Egypt",
+    "pun_name": "Pyramids of Geezer",
+    "status": "approved"
+  },
+  {
+    "id": "pun_grand_canyon_1783282176_513",
+    "original_name": "Grand Canyon",
+    "location": "Arizona, USA",
+    "pun_name": "Grand Crayon",
+    "status": "approved"
+  },
+  {
+    "id": "pun_grand_canyon_1783282176_613",
+    "original_name": "Grand Canyon",
+    "location": "Arizona, USA",
+    "pun_name": "Granny Canyon",
+    "status": "approved"
+  },
+  {
+    "id": "pun_grand_canyon_1783282176_351",
+    "original_name": "Grand Canyon",
+    "location": "Arizona, USA",
+    "pun_name": "Grand Cannon",
+    "status": "approved"
+  },
+  {
+    "id": "pun_sydney_opera_house_1783282181_553",
+    "original_name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "pun_name": "Sydney Opera Blouse",
+    "status": "approved"
+  },
+  {
+    "id": "pun_sydney_opera_house_1783282181_351",
+    "original_name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "pun_name": "Sydney Opossum House",
+    "status": "approved"
+  },
+  {
+    "id": "pun_colosseum_1783294547_324",
+    "original_name": "Colosseum",
+    "location": "Rome, Italy",
+    "pun_name": "Closet Museum",
+    "status": "approved"
+  },
+  {
+    "id": "pun_colosseum_1783294547_796",
+    "original_name": "Colosseum",
+    "location": "Rome, Italy",
+    "pun_name": "Coleslaw Museum",
+    "status": "approved"
+  },
+  {
+    "id": "pun_christ_the_redeemer_1783294550_212",
+    "original_name": "Christ the Redeemer",
+    "location": "Rio de Janeiro, Brazil",
+    "pun_name": "Crust the Redeemer",
+    "status": "approved"
+  },
+  {
+    "id": "pun_louvre_museum_1783294554_343",
+    "original_name": "Louvre Museum",
+    "location": "Paris, France",
+    "pun_name": "Lover Museum",
+    "status": "approved"
+  },
+  {
+    "id": "pun_stonehenge_1783294558_504",
+    "original_name": "Stonehenge",
+    "location": "Wiltshire, England",
+    "pun_name": "Sconehenge",
+    "status": "approved"
+  },
+  {
+    "id": "pun_stonehenge_1783294558_261",
+    "original_name": "Stonehenge",
+    "location": "Wiltshire, England",
+    "pun_name": "Conehenge",
+    "status": "approved"
+  },
+  {
+    "id": "pun_mount_everest_1783294561_980",
+    "original_name": "Mount Everest",
+    "location": "Nepal/China",
+    "pun_name": "Mount Cleverest",
+    "status": "approved"
+  }
+]
