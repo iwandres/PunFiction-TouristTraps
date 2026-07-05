@@ -36,7 +36,10 @@ LANDMARKS_FILE = os.path.join(DIR_PATH, 'travelreviews_landmarks.json')
 PUNS_FILE = os.path.join(DIR_PATH, 'travelreviews_puns.json')
 TRAVELREVIEWS_RECORDS_FILE = os.path.join(DIR_PATH, 'travelreviews_records.json')
 
-CARTOONS_DIR = os.path.join(PROJECT_ROOT, 'travelreviews', 'assets', 'cartoons')
+if os.path.exists(os.path.join(PROJECT_ROOT, 'travelreviews')):
+    CARTOONS_DIR = os.path.join(PROJECT_ROOT, 'travelreviews', 'assets', 'cartoons')
+else:
+    CARTOONS_DIR = os.path.join(PROJECT_ROOT, 'assets', 'cartoons')
 os.makedirs(CARTOONS_DIR, exist_ok=True)
 UNIFIED_HTML_FILE = os.path.join(DIR_PATH, 'unified_admin.html')
 
@@ -245,14 +248,20 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
             if req_path.startswith('/assets/'):
                 # Try 1-Star Travel Reviews folder first
                 file_path_tt = os.path.join(PROJECT_ROOT, 'travelreviews', *clean_path.split('/'))
+                file_path_root = os.path.join(PROJECT_ROOT, *clean_path.split('/'))
                 if os.path.exists(file_path_tt) and not os.path.isdir(file_path_tt):
                     file_path = file_path_tt
+                elif os.path.exists(file_path_root) and not os.path.isdir(file_path_root):
+                    file_path = file_path_root
                 else:
                     # Fallback to Box Office assets folder
                     file_path = os.path.join(DIR_PATH, *clean_path.split('/'))
             else:
                 # Regular travelreviews files
-                file_path = os.path.join(PROJECT_ROOT, *clean_path.split('/'))
+                parts = clean_path.split('/')
+                if parts and parts[0] == 'travelreviews' and not os.path.exists(os.path.join(PROJECT_ROOT, 'travelreviews')):
+                    parts = parts[1:]
+                file_path = os.path.join(PROJECT_ROOT, *parts)
                 
             if os.path.exists(file_path) and not os.path.isdir(file_path):
                 self.send_response(200)
@@ -581,7 +590,10 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                             img_path = item.get('image_path')
                             if img_path and img_path.startswith('/assets/'):
                                 clean_path = urllib.parse.unquote(img_path.strip('/'))
-                                file_to_delete = os.path.join(PROJECT_ROOT, 'travelreviews', *clean_path.split('/'))
+                                if os.path.exists(os.path.join(PROJECT_ROOT, 'travelreviews')):
+                                    file_to_delete = os.path.join(PROJECT_ROOT, 'travelreviews', *clean_path.split('/'))
+                                else:
+                                    file_to_delete = os.path.join(PROJECT_ROOT, *clean_path.split('/'))
                                 if os.path.exists(file_to_delete):
                                     try:
                                         os.remove(file_to_delete)
