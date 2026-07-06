@@ -147,15 +147,15 @@
     "status": "approved"
   },
   {
-    "id": "pun_sagrada_fam\u00edlia_1783295364_613",
-    "original_name": "Sagrada Fam\u00edlia",
+    "id": "pun_sagrada_família_1783295364_613",
+    "original_name": "Sagrada Família",
     "location": "Barcelona, Spain",
-    "pun_name": "Sangria Fam\u00edlia",
+    "pun_name": "Sangria Família",
     "status": "approved"
   },
   {
-    "id": "pun_sagrada_fam\u00edlia_1783295364_269",
-    "original_name": "Sagrada Fam\u00edlia",
+    "id": "pun_sagrada_família_1783295364_269",
+    "original_name": "Sagrada Família",
     "location": "Barcelona, Spain",
     "pun_name": "Sagrada Formula",
     "status": "approved"
@@ -250,20 +250,6 @@
     "location": "London, UK",
     "pun_name": "Sour Bridge",
     "status": "approved"
-  },
-  {
-    "id": "pun_st._peter's_basilica_1783298874_821",
-    "original_name": "St. Peter's Basilica",
-    "location": "Vatican City",
-    "pun_name": "St. Peter's Basilisk-a",
-    "status": "pending"
-  },
-  {
-    "id": "pun_st._peter's_basilica_1783298874_739",
-    "original_name": "St. Peter's Basilica",
-    "location": "Vatican City",
-    "pun_name": "St. Peter's Basic-a",
-    "status": "pending"
   },
   {
     "id": "pun_empire_state_building_1783298887_454",
@@ -602,14 +588,14 @@
   {
     "id": "pun_black_forest_1783313903_591",
     "original_name": "Black Forest",
-    "location": "Baden-W\u00fcrttemberg, Germany",
+    "location": "Baden-Württemberg, Germany",
     "pun_name": "Snack Forest",
     "status": "approved"
   },
   {
     "id": "pun_black_forest_1783313903_237",
     "original_name": "Black Forest",
-    "location": "Baden-W\u00fcrttemberg, Germany",
+    "location": "Baden-Württemberg, Germany",
     "pun_name": "Quack Forest",
     "status": "approved"
   },
@@ -831,22 +817,22 @@
     "status": "pending"
   },
   {
-    "id": "pun_alc\u00e1zar_of_seville_1783314525_686",
-    "original_name": "Alc\u00e1zar of Seville",
+    "id": "pun_alcázar_of_seville_1783314525_686",
+    "original_name": "Alcázar of Seville",
     "location": "Seville, Spain",
     "pun_name": "Alka-Seltzer of Seville",
     "status": "pending"
   },
   {
-    "id": "pun_alc\u00e1zar_of_seville_1783314525_763",
-    "original_name": "Alc\u00e1zar of Seville",
+    "id": "pun_alcázar_of_seville_1783314525_763",
+    "original_name": "Alcázar of Seville",
     "location": "Seville, Spain",
     "pun_name": "All Kazoo of Seville",
     "status": "pending"
   },
   {
-    "id": "pun_alc\u00e1zar_of_seville_1783314525_983",
-    "original_name": "Alc\u00e1zar of Seville",
+    "id": "pun_alcázar_of_seville_1783314525_983",
+    "original_name": "Alcázar of Seville",
     "location": "Seville, Spain",
     "pun_name": "Al Cat-zar of Seville",
     "status": "pending"
@@ -950,24 +936,24 @@
     "status": "pending"
   },
   {
-    "id": "pun_hofbr\u00e4uhaus_m\u00fcnchen_1783314708_626",
-    "original_name": "Hofbr\u00e4uhaus M\u00fcnchen",
+    "id": "pun_hofbräuhaus_münchen_1783314708_626",
+    "original_name": "Hofbräuhaus München",
     "location": "Munich, Germany",
-    "pun_name": "Hofbr\u00e4uhaus Munchies",
+    "pun_name": "Hofbräuhaus Munchies",
     "status": "pending"
   },
   {
-    "id": "pun_hofbr\u00e4uhaus_m\u00fcnchen_1783314708_525",
-    "original_name": "Hofbr\u00e4uhaus M\u00fcnchen",
+    "id": "pun_hofbräuhaus_münchen_1783314708_525",
+    "original_name": "Hofbräuhaus München",
     "location": "Munich, Germany",
-    "pun_name": "Hoofbr\u00e4uhaus M\u00fcnchen",
+    "pun_name": "Hoofbräuhaus München",
     "status": "pending"
   },
   {
-    "id": "pun_hofbr\u00e4uhaus_m\u00fcnchen_1783314708_799",
-    "original_name": "Hofbr\u00e4uhaus M\u00fcnchen",
+    "id": "pun_hofbräuhaus_münchen_1783314708_799",
+    "original_name": "Hofbräuhaus München",
     "location": "Munich, Germany",
-    "pun_name": "Hof-Brawl-Haus M\u00fcnchen",
+    "pun_name": "Hof-Brawl-Haus München",
     "status": "pending"
   },
   {
@@ -1211,21 +1197,21 @@
   {
     "id": "pun_wawel_castle_1783314802_622",
     "original_name": "Wawel Castle",
-    "location": "Krak\u00f3w, Poland",
+    "location": "Kraków, Poland",
     "pun_name": "Waffle Castle",
     "status": "pending"
   },
   {
     "id": "pun_wawel_castle_1783314802_184",
     "original_name": "Wawel Castle",
-    "location": "Krak\u00f3w, Poland",
+    "location": "Kraków, Poland",
     "pun_name": "Wobble Castle",
     "status": "pending"
   },
   {
     "id": "pun_wawel_castle_1783314802_562",
     "original_name": "Wawel Castle",
-    "location": "Krak\u00f3w, Poland",
+    "location": "Kraków, Poland",
     "pun_name": "Wah-wah Castle",
     "status": "pending"
   },
