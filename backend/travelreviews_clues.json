@@ -331,7 +331,7 @@
     "clue3": "Huge rock-cut facade... Not even a single slice!",
     "clue4": "",
     "owner_response": "Dear @SourDough, while our ancient Nabataean city carved from sandstone is certainly breathtaking, it has never been known for its edible qualities or cherry filling. Perhaps you confuse us with a local patisserie?",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_angkor_wat_1783298848_578_1783299323_464",
@@ -345,35 +345,7 @@
     "clue3": "It's literally just a giant anchor-shaped \"Wat\"! Unbelievable.",
     "clue4": "",
     "owner_response": "Dear @RustyRope, we are truly perplexed by your complaints. This is an ancient Khmer temple complex, not a nautical device, and certainly isn't rusting or causing boats to sink.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_niagara_falls_1783298853_274_1783299330_428",
-    "pun_id": "pun_niagara_falls_1783298853_274",
-    "pun_name": "Niagara Calls",
-    "original_name": "Niagara Falls",
-    "reviewer_name": "WrongNumber",
-    "review_title": "Absolutely terrible reception!",
-    "clue1": "Crossed two countries... heard nothing but a buzzing dial tone.",
-    "clue2": "So much mist! I kept yelling... 'Can you hear me now?!'",
-    "clue3": "Just a constant waterfall of unwanted telemarketing surveys.",
-    "clue4": "",
-    "owner_response": "Dear @WrongNumber, we are a majestic natural waterfall, not a telephone exchange. Our 'thundering roar' comes from millions of gallons of water dramatically plunging, not a busy signal, and certainly not telemarketing surveys.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_niagara_falls_1783298853_701_1783312667_314",
-    "pun_id": "pun_niagara_falls_1783298853_701",
-    "pun_name": "Niagara Fails",
-    "original_name": "Niagara Falls",
-    "reviewer_name": "DrippingDisappointment",
-    "review_title": "More Like Niagara Flails!",
-    "clue1": "Cross-border disappointment... more like a leaky faucet!",
-    "clue2": "Expected a thundering roar... got a sad gurgle.",
-    "clue3": "The water doesn't even... *fall*... it just barely seeps.",
-    "clue4": "",
-    "owner_response": "Listen @DrippingDisappointment, this natural wonder unleashes millions of gallons per second, creating an unforgettable, thundering roar. We assure you, it doesn't 'gurgle' or resemble a 'leaky faucet'.",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_chichen_itza_1783298859_788_1783312691_208",
@@ -387,35 +359,7 @@
     "clue3": "Wanted a slice, got ancient stone... itza joke, right?",
     "clue4": "",
     "owner_response": "Dear @DoughBoyDud, this ancient ceremonial city, built by the Maya, offers profound historical insight, not culinary delights. We are surprised you expected 'soggy crust' and 'lukewarm poultry' from our magnificent stone structures.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_chichen_itza_1783298859_579_1783312714_366",
-    "pun_id": "pun_chichen_itza_1783298859_579",
-    "pun_name": "Kitchen Pizza",
-    "original_name": "Chichen Itza",
-    "reviewer_name": "CrustyCritic",
-    "review_title": "Un-dough-lievable disappointment.",
-    "clue1": "Expected hot slices, got cold Yucatan stones and no oven!",
-    "clue2": "Ancient steps to a cold, flat dough. Where are the toppings?",
-    "clue3": "No oven or delivery, just ancient steps for a burnt crust.",
-    "clue4": "",
-    "owner_response": "Dear @CrustyCritic, our revered ancient stone city, a testament to Maya ingenuity, offers neither ovens nor 'delivery.' Expecting hot slices from a millennium-old pyramid is quite the culinary delusion.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_chichen_itza_1783298859_956_1783312721_475",
-    "pun_id": "pun_chichen_itza_1783298859_956",
-    "pun_name": "Itchin' Itza",
-    "original_name": "Chichen Itza",
-    "reviewer_name": "BugBiteBetty",
-    "review_title": "Seriously, so much scratching!",
-    "clue1": "Yucat\u00e1n ruins left me crawling... tiny creatures everywhere!",
-    "clue2": "Impressive pyramid... but I became a human buffet!",
-    "clue3": "Couldn't stop scratching for days... literally lived up to the name!",
-    "clue4": "",
-    "owner_response": "Dear @BugBiteBetty, our UNESCO World Heritage Site is an archaeological wonder, not an insectarium. We regret you confused our ancient structures with a literal insect infestation.",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_panama_canal_1783298954_571_1783312733_446",
@@ -429,7 +373,7 @@
     "clue3": "It's just a gigantic set of sleeping clothes! Unacceptable!",
     "clue4": "",
     "owner_response": "Dear @ComfyCaptain, our international shipping conduit employs a complex system of locks, not 'buttons' for fabric. You seem to have confused a historical waterway with laundry day.",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_panama_canal_1783298954_518_1783312741_104",
@@ -443,7 +387,7 @@
     "clue3": "Atlantic to Pacific... via a giant, rotting fruit chute. Unacceptable!",
     "clue4": "",
     "owner_response": "Dear Traveler, our magnificent engineering feat connects oceans; it does not provide 'yellow and mushy currents' or 'fruit chutes.' Perhaps you're thinking of a different kind of channel, @JungleJester?",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_big_ben_1783298937_759_1783312750_300",
@@ -457,35 +401,7 @@
     "clue3": "Hard to find your inner peace with a giant, noisy clock right there.",
     "clue4": "",
     "owner_response": "Dear @NoInnerPeaceNed, it seems you've mistaken a historical clock tower for a quiet yoga retreat. Our primary function is telling time, not facilitating chakra alignment; the chimes are rather essential for that.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_yellowstone_national_park_1783298941_942_1783312760_276",
-    "pun_id": "pun_yellowstone_national_park_1783298941_942",
-    "pun_name": "Mellowstone National Park",
-    "original_name": "Yellowstone National Park",
-    "reviewer_name": "ZenSeeker",
-    "review_title": "Warning: Extreme Calm Ahead!",
-    "clue1": "America's 'fiery' nature? More like a weighted blanket. So. Very. Mild.",
-    "clue2": "Geysers were barely a shrug. The 'stone' parts felt strangely... squishy.",
-    "clue3": "My adventurous spirit was completely... *pacified*. Needs a kick!",
-    "clue4": "",
-    "owner_response": "Dear @ZenSeeker, while we're glad you found some tranquility, our geysers and rugged terrain are rarely described as 'mild' or 'squishy.' Perhaps you're looking for a different kind of 'park' entirely.",
-    "status": "pending"
-  },
-  {
-    "id": "clue_pun_yellowstone_national_park_1783298941_390_1783312772_737",
-    "pun_id": "pun_yellowstone_national_park_1783298941_390",
-    "pun_name": "Bellowstone National Park",
-    "original_name": "Yellowstone National Park",
-    "reviewer_name": "WindbagWanderer",
-    "review_title": "A Resounding Disappointment",
-    "clue1": "More like a giant, rusty blacksmith's tool... in the American mountains!",
-    "clue2": "Just a bunch of noisy huffing and puffing... no actual *Old Faithful*.",
-    "clue3": "Constantly being blown away... my \"yellow\" raincoat was useless.",
-    "clue4": "",
-    "owner_response": "Dear @WindbagWanderer, you seem to have confused our geyser-filled national park with a literal air pump. We assure you, our majestic geothermal features do not require any \"huffing and puffing\" to erupt.",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "clue_pun_great_barrier_reef_1783298920_807_1783312782_417",
