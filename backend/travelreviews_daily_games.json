@@ -176,5 +176,25 @@
     "page_theme": "road_trip",
     "status": "approved",
     "tt_puzzles": []
+  },
+  {
+    "puzzle_number": "006",
+    "puzzle_id": "clue_pun_stonehenge_1783294558_504_1783299143_910",
+    "boss_id": "boss_clue_pun_stonehenge_1783294558_504_1783299143_910",
+    "boss_original_title": "Stonehenge",
+    "boss_pun_title": "Sconehenge",
+    "answer": "__________",
+    "boss_hint2": "S_________",
+    "reviewer_name": "CrumblyKnight",
+    "review_title": "Prehistoric Pastry Predicament!",
+    "clue1": "Very crumbly ancient circle... needs more jam, less druid.",
+    "clue2": "Hard as rock, not fluffy inside! My teeth are gone.",
+    "clue3": "Absolutely *nothing* like my grandma's Sunday baking.",
+    "boss_pitch": "Dear @CrumblyKnight, we regret you mistook our 4,500-year-old megalithic monument for a bakeshop. We strongly advise against attempting to 'eat' our sarsen stones or applying jam.",
+    "boss_poster_url": "/assets/cartoons/sconehenge_1783315275.png",
+    "difficulty_tier": 1,
+    "page_theme": "road_trip",
+    "status": "approved",
+    "tt_puzzles": []
   }
 ]
