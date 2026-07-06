@@ -1165,29 +1165,23 @@ function updateBackgroundStamps(puzzleNum) {
         { name: 'metro_transit' }
     ];
     
-    let themeName = null;
-    if (activeChallenge && activeChallenge.page_theme) {
-        themeName = activeChallenge.page_theme;
-    } else {
-        const theme = themes[(num - 1) % themes.length];
-        themeName = theme.name;
-    }
+    const theme = themes[(num - 1) % themes.length];
     
     const themeStamps = {
-        'road_trip': ['stamp_roadtrip_car.png', 'stamp_compass.png'],
-        'air_mail': ['stamp_airplane.png', 'stamp_compass.png'],
-        'train_passage': ['stamp_train.png', 'stamp_compass.png'],
-        'gondola_ride': ['stamp_gondola.png', 'stamp_compass.png'],
-        'boat_voyage': ['stamp_nautical.png', 'stamp_compass.png'],
-        'mountain_trek': ['stamp_trek.png', 'stamp_compass.png'],
-        'desert_safari': ['stamp_safari.png', 'stamp_compass.png'],
-        'sightseeing': ['stamp_compass.png', 'stamp_airplane.png'],
-        'tropical_island': ['stamp_tropical.png', 'stamp_compass.png'],
-        'winter_lodge': ['stamp_winter.png', 'stamp_compass.png'],
-        'metro_transit': ['stamp_metro.png', 'stamp_compass.png']
+        'road_trip': ['stamp_roadtrip_car.png', 'stamp_roadtrip_car.png'],
+        'air_mail': ['stamp_airplane.png', 'stamp_airplane.png'],
+        'train_passage': ['stamp_train.png', 'stamp_train.png'],
+        'gondola_ride': ['stamp_gondola.png', 'stamp_gondola.png'],
+        'boat_voyage': ['stamp_nautical.png', 'stamp_nautical.png'],
+        'mountain_trek': ['stamp_trek.png', 'stamp_trek.png'],
+        'desert_safari': ['stamp_safari.png', 'stamp_safari.png'],
+        'sightseeing': ['stamp_compass.png', 'stamp_compass.png'],
+        'tropical_island': ['stamp_tropical.png', 'stamp_tropical.png'],
+        'winter_lodge': ['stamp_winter.png', 'stamp_winter.png'],
+        'metro_transit': ['stamp_metro.png', 'stamp_metro.png']
     };
     
-    const files = themeStamps[themeName] || themeStamps['road_trip'];
+    const files = themeStamps[theme.name];
     const leftFile = files[0];
     const rightFile = files[1];
     
@@ -1275,10 +1269,10 @@ function loadLevel() {
     const reviewTitle = activeChallenge.review_title || "Avoid at all costs!";
     const clue1Text = activeChallenge.clue1 || "Review Text Missing";
     ui.pitchDisplay.innerHTML = `
-        <span style="color: #ff4757; display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 800;">1-Star Review</span>
+        <span style="color: var(--text-secondary); display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 800;">1-Star Review</span>
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-family: var(--font-body);">
             <span style="font-weight: 800; font-size: 0.9rem; color: #555;">@${reviewerName}</span>
-            <span style="color: #f1c40f; font-size: 1rem; letter-spacing: -2px; font-weight: bold;">🟡⚪⚪⚪⚪</span>
+            <span style="color: #00aa6c; font-size: 1rem; letter-spacing: -2px; font-weight: bold;">🟢⚪⚪⚪⚪</span>
         </div>
         <div style="font-weight: 800; font-size: 1.1rem; color: var(--border-color); line-height: 1.25; font-family: var(--font-body); margin-bottom: 10px;">${reviewTitle}</div>
         <div style="font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; color: #444; line-height: 1.5; border-top: 1.5px solid rgba(0,0,0,0.06); padding-top: 10px;">"${clue1Text}"</div>
@@ -1333,7 +1327,7 @@ function revealHint2() {
     triggerStartTelemetry();
     ui.btnShowHint2.classList.add('hidden');
     
-    // Reveal Hint 2 section (Original Location) inside the consolidated Hint Box
+    // Reveal Hint 2 section (Real Location) inside the consolidated Hint Box
     if (ui.hintDisplayBox) ui.hintDisplayBox.classList.remove('hidden');
     if (ui.hintMovieSection) ui.hintMovieSection.classList.remove('hidden');
     
@@ -1830,7 +1824,7 @@ function triggerVictory() {
     // Render victory postcard frame immediately
     ui.victoryPosterImg.src = getCorrectPosterUrl(activeChallenge.boss_poster_url);
     ui.finalBossTitle.innerText = activeChallenge.boss_pun_title;
-    ui.finalBossMovie.innerText = `Original Location: ${activeChallenge.boss_original_title}`;
+    ui.finalBossMovie.innerText = `Real Location: ${activeChallenge.boss_original_title}`;
     
     // Response from the Owner
     ui.finalBossPitch.innerHTML = `
