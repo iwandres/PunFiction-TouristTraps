@@ -736,7 +736,8 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                       "clue1": "Clue 1 text",
                       "clue2": "Clue 2 text",
                       "clue3": "Clue 3 text",
-                      "owner_response": "Owner response here"
+                      "owner_response": "Owner response here",
+                      "page_theme": "The most appropriate travel theme name for this location out of: road_trip, air_mail, train_passage, gondola_ride, boat_voyage, mountain_trek, desert_safari, sightseeing, tropical_island, winter_lodge, metro_transit"
                     }}
                     """
                     response = client.models.generate_content(
@@ -757,6 +758,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         "clue2": generated.get("clue2", ""),
                         "clue3": generated.get("clue3", ""),
                         "owner_response": generated.get("owner_response", ""),
+                        "page_theme": generated.get("page_theme", "road_trip"),
                         "status": "pending"
                     })
                     new_clues_count += 1
@@ -868,6 +870,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         "image_path": image_path,
                         "art_style": style_key,
                         "owner_response": c['owner_response'],
+                        "page_theme": c.get('page_theme', 'road_trip'),
                         "status": "pending"
                     }
                     

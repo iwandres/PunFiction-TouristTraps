@@ -1135,7 +1135,13 @@ function updateBackgroundGradient(puzzleNum) {
         { name: 'metro_transit', bg: '#FAF8F5', end: '#EFEBE9', accent: '#5D4037' }     // Metro Transit / Charcoal Brown
     ];
     
-    const theme = themes[(num - 1) % themes.length];
+    let theme = null;
+    if (activeChallenge && activeChallenge.page_theme) {
+        theme = themes.find(t => t.name === activeChallenge.page_theme);
+    }
+    if (!theme) {
+        theme = themes[(num - 1) % themes.length];
+    }
     
     document.documentElement.style.setProperty('--bg-color', theme.bg);
     document.documentElement.style.setProperty('--bg-gradient-end', theme.end);

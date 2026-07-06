@@ -3568,6 +3568,7 @@
                 boss_pitch: item.owner_response,
                 boss_poster_url: item.image_path,
                 difficulty_tier: 1,
+                page_theme: item.page_theme || (matchingClue ? matchingClue.page_theme : 'road_trip'),
                 status: "approved",
                 tt_puzzles: []
             });
@@ -3734,6 +3735,14 @@
                         <div style="margin-top: 4px;"><strong>Clue 1:</strong> ${c.clue1}</div>
                         <div><strong>Clue 2:</strong> ${c.clue2}</div>
                         <div><strong>Clue 3:</strong> ${c.clue3}</div>
+                        <div style="margin-top: 6px; display: flex; align-items: center; gap: 8px;">
+                            <strong>Theme:</strong>
+                            <select onchange="tt_updateClueTheme('${c.id}', this.value)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-primary); font-size: 0.85rem;">
+                                ${['road_trip', 'air_mail', 'train_passage', 'gondola_ride', 'boat_voyage', 'mountain_trek', 'desert_safari', 'sightseeing', 'tropical_island', 'winter_lodge', 'metro_transit'].map(t => `
+                                    <option value="${t}" ${c.page_theme === t ? 'selected' : ''}>${t.replace('_', ' ')}</option>
+                                `).join('')}
+                            </select>
+                        </div>
                     </div>
                 </div>
             `).join('');
@@ -3747,6 +3756,14 @@
                     <div class="item-details">
                         <strong>${p.pun_name}</strong>
                         <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 4px;">Prompt: ${p.image_prompt}</div>
+                        <div style="margin-top: 6px; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-bottom: 6px;">
+                            <strong>Theme:</strong>
+                            <select onchange="tt_updatePostcardTheme('${p.id}', this.value)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-primary); font-size: 0.85rem;">
+                                ${['road_trip', 'air_mail', 'train_passage', 'gondola_ride', 'boat_voyage', 'mountain_trek', 'desert_safari', 'sightseeing', 'tropical_island', 'winter_lodge', 'metro_transit'].map(t => `
+                                    <option value="${t}" ${p.page_theme === t ? 'selected' : ''}>${t.replace('_', ' ')}</option>
+                                `).join('')}
+                            </select>
+                        </div>
                         <div style="font-size: 0.9rem; background: rgba(8, 12, 20, 0.4); border: 1px solid var(--border-base); padding: 12px 15px; border-radius: 8px; color: var(--text-secondary); margin-top: 8px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; border-bottom: 1px dashed var(--border-base); padding-bottom: 4px;">
                                 <strong>Owner Reply:</strong>
@@ -3985,6 +4002,14 @@
                                     <label>Reviewer Username</label>
                                     <input type="text" value="${p.reviewer_name || ''}" onchange="tt_updatePuzzleField(${puzzleIdx}, 'reviewer_name', this.value)">
                                 </div>
+                                <div class="field-group">
+                                    <label>Page Theme</label>
+                                    <select onchange="tt_updatePuzzleField(${puzzleIdx}, 'page_theme', this.value)" style="width: 100%; padding: 8px 12px; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-primary); font-size: 0.9rem; font-weight: 500;">
+                                        ${['road_trip', 'air_mail', 'train_passage', 'gondola_ride', 'boat_voyage', 'mountain_trek', 'desert_safari', 'sightseeing', 'tropical_island', 'winter_lodge', 'metro_transit'].map(t => `
+                                            <option value="${t}" ${p.page_theme === t ? 'selected' : ''}>${t.replace('_', ' ')}</option>
+                                        `).join('')}
+                                    </select>
+                                </div>
                                 <div class="field-group" style="grid-column: span 2;">
                                     <label>Review Title</label>
                                     <textarea style="min-height: 40px; line-height: 1.4; padding: 8px 12px; overflow-y: hidden; resize: none;" oninput="tt_autoResize(this)" onchange="tt_updatePuzzleField(${puzzleIdx}, 'review_title', this.value)">${p.review_title || ''}</textarea>
@@ -4024,6 +4049,34 @@
             gridEl.querySelectorAll('textarea').forEach(tx => {
                 tt_autoResize(tx);
             });
+        }
+
+        function tt_updateClueTheme(clueId, newTheme) {
+            let clue = tt_clues.find(c => c.id === clueId);
+            if (clue) {
+                clue.page_theme = newTheme;
+                tt_saveData('tt_clues', tt_clues);
+                // Also update any matching postcard if it has been generated
+                let pc = tt_postcards.find(p => p.clue_id === clueId);
+                if (pc) {
+                    pc.page_theme = newTheme;
+                    tt_saveData('tt_postcards', tt_postcards);
+                }
+            }
+        }
+
+        function tt_updatePostcardTheme(cardId, newTheme) {
+            let pc = tt_postcards.find(p => p.id === cardId);
+            if (pc) {
+                pc.page_theme = newTheme;
+                tt_saveData('tt_postcards', tt_postcards);
+                // Also update matching clue
+                let clue = tt_clues.find(c => c.id === pc.clue_id);
+                if (clue) {
+                    clue.page_theme = newTheme;
+                    tt_saveData('tt_clues', tt_clues);
+                }
+            }
         }
 
         function tt_updatePuzzleField(idx, key, val) {
