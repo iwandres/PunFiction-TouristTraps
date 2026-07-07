@@ -33,17 +33,6 @@
     "status": "approved"
   },
   {
-    "id": "postcard_clue_pun_landmark_17_1783199003_0_1783199839_1783200985_1783202031",
-    "clue_id": "clue_pun_landmark_17_1783199003_0_1783199839_1783200985",
-    "pun_name": "Leaning Tower of Pizza",
-    "original_name": "Leaning Tower of Pisa",
-    "image_prompt": "A comical travel postcard illustration featuring a colossal, precariously balanced tower constructed entirely of pepperoni pizza slices, leaning dramatically over a bustling Italian piazza, rendered in a bold, silk-screened 1930s WPA-era travel poster style with muted nature-inspired colors and hand-drawn typography.",
-    "image_path": "/assets/cartoons/leaning_tower_of_pizza_1783202016.png",
-    "art_style": "wpa",
-    "owner_response": "Dear Esteemed Guest, we're sorry your visit left you feeling... gastronomically challenged. Our unique architecture certainly has a knack for engaging all senses, including those of hunger and disorientation. Perhaps next time you'll bring your own slice of perspective to truly appreciate our 'Leaning' artistry!",
-    "status": "pending"
-  },
-  {
     "id": "postcard_clue_great_waffle_of_china_1783298506_1783313304",
     "clue_id": "clue_great_waffle_of_china_1783298506",
     "pun_name": "Great Waffle of China",
@@ -128,30 +117,6 @@
     "status": "approved"
   },
   {
-    "id": "postcard_clue_pun_sydney_opera_house_1783282181_553_1783299090_873_1783314443",
-    "clue_id": "clue_pun_sydney_opera_house_1783282181_553_1783299090_873",
-    "pun_name": "Sydney Opera Blouse",
-    "original_name": "Sydney Opera House",
-    "image_prompt": "A ridiculously oversized, frilly white blouse with puffed sleeves and pearl buttons majestically floating on Sydney Harbour, its fabric folds comically mimicking the iconic sails of the Sydney Opera House, comical cartoon illustration, bold lines, bright vibrant colors, humorous caricature, white postcard border.",
-    "image_path": "/assets/cartoons/sydney_opera_blouse_1783314437.png",
-    "art_style": "cartoon",
-    "owner_response": "Dear @LooseSeamLucy, our architectural masterpiece is a UNESCO World Heritage site and a world-class performing arts center, not an item of clothing. We assure you, our majestic 'shells' are made of concrete and tiles, not ruffles for your arms!",
-    "page_theme": "road_trip",
-    "status": "pending"
-  },
-  {
-    "id": "postcard_clue_pun_sydney_opera_house_1783282181_351_1783299099_917_1783315249",
-    "clue_id": "clue_pun_sydney_opera_house_1783282181_351_1783299099_917",
-    "pun_name": "Sydney Opossum House",
-    "original_name": "Sydney Opera House",
-    "image_prompt": "A goofy opossum wearing a small tourist hat grins widely in front of a grand, shell-shaped building, humorously labeled 'Sydney Opossum House', depicted in a vintage 1950s travel poster style with retro flat vector design, bold colors, and a screen-printed aesthetic.",
-    "image_path": "/assets/cartoons/sydney_opossum_house_1783315241.png",
-    "art_style": "retro",
-    "owner_response": "Listen, @MarsupialMiffed, our magnificent architectural sails are designed for acoustics, not 'marsupial ears' or housing 'hissing' wildlife. Perhaps you confused us with a different kind of 'house' entirely.",
-    "page_theme": "road_trip",
-    "status": "pending"
-  },
-  {
     "id": "postcard_clue_pun_colosseum_1783294547_324_1783299106_684_1783315263",
     "clue_id": "clue_pun_colosseum_1783294547_324_1783299106_684",
     "pun_name": "Closet Museum",
@@ -185,19 +150,7 @@
     "art_style": "watercolor",
     "owner_response": "Dear @CrumblyKnight, we regret you mistook our 4,500-year-old megalithic monument for a bakeshop. We strongly advise against attempting to 'eat' our sarsen stones or applying jam.",
     "page_theme": "road_trip",
-    "status": "pending"
-  },
-  {
-    "id": "postcard_clue_pun_stonehenge_1783294558_261_1783299150_156_1783315294",
-    "clue_id": "clue_pun_stonehenge_1783294558_261_1783299150_156",
-    "pun_name": "Conehenge",
-    "original_name": "Stonehenge",
-    "image_prompt": "A whimsical watercolor and ink sketch, in a detailed storybook style, depicting 'Conehenge' as a comical parody where colossal orange traffic cones replace the ancient stones of Stonehenge on a grassy pastel-colored plain, rendered with soft textures and artistic detailing.",
-    "image_path": "/assets/cartoons/conehenge_1783315284.png",
-    "art_style": "watercolor",
-    "owner_response": "Dear @OrangeTrafficCone, our monument dates back millennia, crafted from enormous sarsen stones, not 'construction grade orange plastic.' Perhaps you were looking for a festival car park, not an ancient wonder?",
-    "page_theme": "road_trip",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "postcard_clue_pun_sagrada_fam\u00edlia_1783295364_613_1783299265_553_1783315806",
@@ -324,10 +277,154 @@
     "clue_id": "clue_pun_big_ben_1783298937_847_1783312791_669",
     "pun_name": "Pig Pen",
     "original_name": "Big Ben",
-    "image_prompt": "A comical travel postcard depicting a towering 'Big Pig Pen' clock tower, resembling Big Ben but constructed from rustic wood and mud with playful pigs peeking from its windows and clock face, all rendered in a vibrant Pop Art style with bold outlines, screen print dot texture, retro comic book feel, and high contrast colors.",
-    "image_path": "/assets/cartoons/pig_pen_1783395591.png",
-    "art_style": "pop-art",
+    "image_prompt": "A comical travel postcard depicting a towering 'Pig Pen' clock tower, resembling Big Ben but constructed from rustic wood and mud with playful pigs peeking from its windows and clock face, all rendered in a vibrant Pop Art style with bold outlines, screen print dot texture, retro comic book feel, and high contrast colors.",
+    "image_path": "/assets/cartoons/pig_pen_1783396560.png",
+    "art_style": "custom",
     "owner_response": "Dear @MuddyPaws, our nearly 170-year-old bell tower is known for its precise timekeeping and majestic chimes, not for 'grunting' or 'mud'. We suspect you've confused us with a very different kind of 'pen'.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_leaning_tower_of_pisa_1783298900_537_1783312812_726_1783396398",
+    "clue_id": "clue_pun_leaning_tower_of_pisa_1783298900_537_1783312812_726",
+    "pun_name": "Cleaning Tower of Pisa",
+    "original_name": "Leaning Tower of Pisa",
+    "image_prompt": "A whimsical watercolor and ink sketch portrays the iconic Tower of Pisa as a colossal, tilted scrubbing brush, comically cleaning a giant, bubbly bar of soap on the Italian countryside, rendered in detailed storybook style with soft textures and pastel colors.",
+    "image_path": "/assets/cartoons/cleaning_tower_of_pisa_1783396391.png",
+    "art_style": "watercolor",
+    "owner_response": "Dear @SudsSufferer, it's quite remarkable how you expected a historical bell tower to double as a cleaning service. Perhaps you confused our architectural tilt with a mop wringer?",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_vampire_state_building_1783312880_1783396410",
+    "clue_id": "clue_vampire_state_building_1783312880",
+    "pun_name": "Vampire State Building",
+    "original_name": "Empire State Building",
+    "image_prompt": "A comical travel postcard depicting the 'Vampire State Building', a towering skyscraper with enormous fangs, comically bending over to 'bite' the neck of a smaller adjacent building, in a Vibrant Pop Art style with bold outlines, screen print dot texture, retro comic book feel, and high contrast colors.",
+    "image_path": "/assets/cartoons/vampire_state_building_1783396404.png",
+    "art_style": "pop-art",
+    "owner_response": "Dear @NightCrawlerNY, our iconic 102-story landmark is built for human admiration and unparalleled city views, not as a reflection-free zone for the undead. If you're seeking bloodsuckers, I suggest you investigate New York's real estate market.",
+    "page_theme": "sightseeing",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_limes_square_1783312896_1783396425",
+    "clue_id": "clue_limes_square_1783312896",
+    "pun_name": "Limes Square",
+    "original_name": "Times Square",
+    "image_prompt": "A comical scene of anthropomorphic limes bustling through a vibrant 'Limes Square,' complete with towering citrus billboards and glowing green lights, all rendered in a classic distressed linen texture vintage postcard style, hand-colored photo print aesthetic, 1930s travel style.",
+    "image_path": "/assets/cartoons/limes_square_1783396414.png",
+    "art_style": "vintage",
+    "owner_response": "Dear @SourPuss, Times Square is a global icon of commerce and culture, not a citrus grove. While we appreciate your concern for public health, our dazzling billboards don't dispense Vitamin C.",
+    "page_theme": "sightseeing",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_mimes_square_1783312901_1783396438",
+    "clue_id": "clue_mimes_square_1783312901",
+    "pun_name": "Mimes Square",
+    "original_name": "Times Square",
+    "image_prompt": "Classic distressed linen texture vintage postcard style, hand-colored photo print aesthetic, 1930s travel style, showing a hilariously bustling Mimes Square where silent performers in black and white mime hailing invisible taxis and being stuck in imaginary boxes under towering, 'soundless' billboards.",
+    "image_path": "/assets/cartoons/mimes_square_1783396432.png",
+    "art_style": "vintage",
+    "owner_response": "Dear @SilentScreamer, we assure you, our iconic intersection is known for its vibrant sounds and dazzling billboards, not silent pantomimes or imaginary enclosures. Perhaps you confused us with a very specific theatrical performance?",
+    "page_theme": "sightseeing",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_colosseum_1783294547_796_1783313422_940_1783396450",
+    "clue_id": "clue_pun_colosseum_1783294547_796_1783313422_940",
+    "pun_name": "Coleslaw Museum",
+    "original_name": "Colosseum",
+    "image_prompt": "A whimsical watercolor and ink sketch, detailed storybook style, depicting the magnificent 'Coleslaw Museum,' a comically grand ancient arena built entirely from giant cabbage leaves, shredded carrots, and creamy mayonnaise, with tiny, smiling tourists posing joyfully in front of its edible facade, rendered with soft textures and pastel colors.",
+    "image_path": "/assets/cartoons/coleslaw_museum_1783396442.png",
+    "art_style": "watercolor",
+    "owner_response": "Dear @MayoMess, it seems you've confused our ancient Flavian Amphitheatre, a monumental testament to Roman engineering, with... a salad bar? We do not serve fermented cabbage, only history.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_leaning_tower_of_pisa_1783298900_532_1783313448_255_1783396641",
+    "clue_id": "clue_pun_leaning_tower_of_pisa_1783298900_532_1783313448_255",
+    "pun_name": "Leaning Tower of Pizza",
+    "original_name": "Leaning Tower of Pisa",
+    "image_prompt": "A comically leaning tower made entirely of colossal stacked pizzas, replacing the Pisa monument in an Italian town square, depicted in an old school vintage travel illustration style with bold shapes, muted earthy color palettes, and hand-drawn typography, evoking 1930s WPA-era travel posters.",
+    "image_path": "/assets/cartoons/leaning_tower_of_pizza_1783396632.png",
+    "art_style": "wpa",
+    "owner_response": "Dear @SlantedSlice, we are a 56-meter marble bell tower, not a restaurant. Our historic structure is neither 'shaped like a pie' nor meant for your pepperoni cravings.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_burj_khalifa_1783298862_522_1783313846_377_1783396671",
+    "clue_id": "clue_pun_burj_khalifa_1783298862_522_1783313846_377",
+    "pun_name": "Burger Khalifa",
+    "original_name": "Burj Khalifa",
+    "image_prompt": "A ridiculously tall and comical multi-patty 'Burger Khalifa' skyscraper dominates a stylized desert city skyline, depicted in a classic distressed linen texture vintage postcard style with a hand-colored photo print aesthetic, capturing the charm of 1930s travel.",
+    "image_path": "/assets/cartoons/burger_khalifa_1783396662.png",
+    "art_style": "vintage",
+    "owner_response": "Dear @GreasyGastronaut, perhaps you've mistaken our 828-meter architectural marvel for a fast-food establishment. We assure you, our observation decks offer breathtaking views, not mysterious tangy sauce or cold meat patties.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_tower_bridge_1783298870_706_1783313977_579_1783396681",
+    "clue_id": "clue_pun_tower_bridge_1783298870_706_1783313977_579",
+    "pun_name": "Shower Bridge",
+    "original_name": "Tower Bridge",
+    "image_prompt": "A whimsical watercolor and ink sketch, detailed storybook style, soft textures, pastel colors, artistically detailed, showing a comically grand 'Shower Bridge' where enormous, gilded showerheads replace the iconic towers of a majestic London bridge, humorously drenching tiny, umbrella-wielding tourists and boats with gentle streams of water, creating a bizarre yet charming travel postcard scene.",
+    "image_path": "/assets/cartoons/shower_bridge_1783396676.png",
+    "art_style": "watercolor",
+    "owner_response": "Dear @DrippingTourist, while we appreciate your visit, our magnificent Victorian Gothic structures have never 'dispensed lukewarm water' or offered a 'constant spray.' We are an iconic crossing over the Thames, not a public bathing facility.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_tower_bridge_1783298870_114_1783313984_866_1783396824",
+    "clue_id": "clue_pun_tower_bridge_1783298870_114_1783313984_866",
+    "pun_name": "Sour Bridge",
+    "original_name": "Tower Bridge",
+    "image_prompt": "A grand, parodied 'Sour Bridge,' where the iconic Tower Bridge is comically constructed from giant, pale yellow lemons, with tiny tourists puckering their faces as they cross, rendered as a whimsical watercolor and ink sketch in a detailed storybook style with soft textures, pastel colors, and artistic detail.",
+    "image_path": "/assets/cartoons/sour_bridge_1783396818.png",
+    "art_style": "watercolor",
+    "owner_response": "Dear @PuckeredPalate, we are a magnificent Victorian marvel crossing the Thames, not a tart treat. Our iconic structure certainly isn't designed to make your face pucker.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_landmark_1_1783199003_2_1783199786_1783314010_894_1783396836",
+    "clue_id": "clue_pun_landmark_1_1783199003_2_1783199786_1783314010_894",
+    "pun_name": "Eiffel Flower",
+    "original_name": "Eiffel Tower",
+    "image_prompt": "A comical vintage 1950s travel poster depicting a gigantic, brightly colored daisy towering over the Parisian cityscape where the Eiffel Tower should be, rendered with a retro flat vector design, bold colors, and a screen-printed poster aesthetic.",
+    "image_path": "/assets/cartoons/eiffel_flower_1783396828.png",
+    "art_style": "retro",
+    "owner_response": "Dear @WiltingViolet, this is a 300-meter wrought-iron monument, not a botanical garden for 'delicate petals.' We're quite famous for our girders, not our pollen count.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_landmark_12_1783199003_0_1783199821_1783314026_698_1783396852",
+    "clue_id": "clue_pun_landmark_12_1783199003_0_1783199821_1783314026_698",
+    "pun_name": "St. Peter's Bazooka",
+    "original_name": "St. Peter's Basilica",
+    "image_prompt": "A comical, old-school vintage travel illustration, reminiscent of 1930s WPA posters, showing a monumental, anachronistic bazooka replacing St. Peter's Basilica's dome in a bustling Rome scene, with tiny, awestruck tourists, rendered in bold shapes, muted earthy tones, and featuring hand-drawn 'St. Peter's Bazooka' typography.",
+    "image_path": "/assets/cartoons/st._peter's_bazooka_1783396843.png",
+    "art_style": "wpa",
+    "owner_response": "Dear @DeaconOfDetonation, it appears you\u2019ve mistaken a sacred architectural marvel for an armory. We assure you, our venerable structure offers spiritual contemplation, not 'explosive firepower' or 'concussive force'.",
+    "page_theme": "road_trip",
+    "status": "approved"
+  },
+  {
+    "id": "postcard_clue_pun_landmark_15_1783199003_1_1783199835_1783314052_528_1783396863",
+    "clue_id": "clue_pun_landmark_15_1783199003_1_1783199835_1783314052_528",
+    "pun_name": "The Can-theon",
+    "original_name": "Pantheon",
+    "image_prompt": "A grand, Pantheon-inspired temple with colossal columns and a majestic dome, all comically constructed from brightly colored, stacked tin cans, set against a vibrant sky in a vintage 1950s travel poster style.",
+    "image_path": "/assets/cartoons/the_can_theon_1783396857.png",
+    "art_style": "retro",
+    "owner_response": "Dear @CannedCritique, our ancient temple, designed for gods and emperors, was never intended for 'sealing freshness' or storing processed peas. We are an architectural masterpiece, not a giant food container.",
     "page_theme": "road_trip",
     "status": "pending"
   }

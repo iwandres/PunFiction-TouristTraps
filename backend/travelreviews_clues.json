@@ -96,20 +96,6 @@
     "status": "approved"
   },
   {
-    "id": "clue_pun_sydney_opera_house_1783282181_553_1783299090_873",
-    "pun_id": "pun_sydney_opera_house_1783282181_553",
-    "pun_name": "Sydney Opera Blouse",
-    "original_name": "Sydney Opera House",
-    "reviewer_name": "LooseSeamLucy",
-    "review_title": "This fashion statement is a disaster!",
-    "clue1": "Expected grand sails... got flimsy fabric instead, right down under.",
-    "clue2": "The 'shells' were just odd ruffles, no room for my arms... so uncomfortable.",
-    "clue3": "Seriously, who designed this garment? It's just a gigantic shirt!",
-    "clue4": "",
-    "owner_response": "Dear @LooseSeamLucy, our architectural masterpiece is a UNESCO World Heritage site and a world-class performing arts center, not an item of clothing. We assure you, our majestic 'shells' are made of concrete and tiles, not ruffles for your arms!",
-    "status": "approved"
-  },
-  {
     "id": "clue_pun_colosseum_1783294547_324_1783299106_684",
     "pun_id": "pun_colosseum_1783294547_324",
     "pun_name": "Closet Museum",
@@ -552,20 +538,6 @@
     "clue3": "So many historic figures... stuck inside a giant tin!",
     "clue4": "",
     "owner_response": "Dear @CannedCritique, our ancient temple, designed for gods and emperors, was never intended for 'sealing freshness' or storing processed peas. We are an architectural masterpiece, not a giant food container.",
-    "status": "approved"
-  },
-  {
-    "id": "clue_pun_landmark_17_1783199003_1_1783199839_1783314058_828",
-    "pun_id": "pun_landmark_17_1783199003_1_1783199839",
-    "pun_name": "Leaning Shower of Pisa",
-    "original_name": "Leaning Tower of Pisa",
-    "reviewer_name": "SoggyTourist",
-    "review_title": "Worst. Shower. Ever. And it Leans!",
-    "clue1": "Bell tower tourist trap... ended up completely soaked in Italian 'water'.",
-    "clue2": "Awkward angle made showering impossible... water everywhere, not a towel in sight!",
-    "clue3": "Honestly, who designed a leaning monument that just... sprays water?",
-    "clue4": "",
-    "owner_response": "Dear @SoggyTourist, it seems you've mistaken our 55-meter marble bell tower for some kind of communal bathing facility. We certainly don't \"spray water,\" nor do we provide towels for travelers who've attempted to shower on ancient monuments.",
     "status": "approved"
   },
   {

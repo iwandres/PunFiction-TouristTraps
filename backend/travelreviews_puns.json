@@ -77,20 +77,6 @@
     "status": "approved"
   },
   {
-    "id": "pun_sydney_opera_house_1783282181_553",
-    "original_name": "Sydney Opera House",
-    "location": "Sydney, Australia",
-    "pun_name": "Sydney Opera Blouse",
-    "status": "approved"
-  },
-  {
-    "id": "pun_sydney_opera_house_1783282181_351",
-    "original_name": "Sydney Opera House",
-    "location": "Sydney, Australia",
-    "pun_name": "Sydney Opossum House",
-    "status": "approved"
-  },
-  {
     "id": "pun_colosseum_1783294547_324",
     "original_name": "Colosseum",
     "location": "Rome, Italy",
@@ -210,13 +196,6 @@
     "status": "approved"
   },
   {
-    "id": "pun_chichen_itza_1783298859_579",
-    "original_name": "Chichen Itza",
-    "location": "Yucatan, Mexico",
-    "pun_name": "Kitchen Pizza",
-    "status": "approved"
-  },
-  {
     "id": "pun_chichen_itza_1783298859_956",
     "original_name": "Chichen Itza",
     "location": "Yucatan, Mexico",
@@ -284,20 +263,6 @@
     "original_name": "Mount Rushmore",
     "location": "South Dakota, USA",
     "pun_name": "Mount Crushmore",
-    "status": "approved"
-  },
-  {
-    "id": "pun_mount_rushmore_1783298897_250",
-    "original_name": "Mount Rushmore",
-    "location": "South Dakota, USA",
-    "pun_name": "Mount Lushmore",
-    "status": "approved"
-  },
-  {
-    "id": "pun_leaning_tower_of_pisa_1783298900_532",
-    "original_name": "Leaning Tower of Pisa",
-    "location": "Pisa, Italy",
-    "pun_name": "Leaning Tower of Pizza",
     "status": "approved"
   },
   {
@@ -455,24 +420,6 @@
     "pun_name": "The Can-theon",
     "replaced_part": "Pan",
     "rhyme_used": "Can",
-    "status": "approved"
-  },
-  {
-    "id": "pun_landmark_17_1783199003_0_1783199839",
-    "landmark_id": "landmark_17_1783199003",
-    "original_name": "Leaning Tower of Pisa",
-    "pun_name": "Leaning Tower of Pizza",
-    "replaced_part": "Pisa",
-    "rhyme_used": "Pizza",
-    "status": "approved"
-  },
-  {
-    "id": "pun_landmark_17_1783199003_1_1783199839",
-    "landmark_id": "landmark_17_1783199003",
-    "original_name": "Leaning Tower of Pisa",
-    "pun_name": "Leaning Shower of Pisa",
-    "replaced_part": "Tower",
-    "rhyme_used": "Shower",
     "status": "approved"
   },
   {
@@ -1505,6 +1452,27 @@
     "original_name": "Great Blue Hole",
     "location": "Belize Barrier Reef, Belize",
     "pun_name": "Great Boo Hole",
+    "status": "pending"
+  },
+  {
+    "id": "pun_sydney_opera_house_1783397556_630",
+    "original_name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "pun_name": "Sydney Oprah House",
+    "status": "pending"
+  },
+  {
+    "id": "pun_sydney_opera_house_1783397556_548",
+    "original_name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "pun_name": "Sydney Hop-era House",
+    "status": "pending"
+  },
+  {
+    "id": "pun_sydney_opera_house_1783397556_452",
+    "original_name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "pun_name": "Sydney Opera Mouse",
     "status": "pending"
   }
 ]

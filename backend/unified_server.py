@@ -656,6 +656,8 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         )
                     )
                     pun_candidates = json.loads(response.text)
+                    # Reload the latest puns list from disk to avoid overwriting concurrent edits
+                    puns = load_json(PUNS_FILE, [])
                     for candidate in pun_candidates:
                         puns.append({
                             "id": f"pun_{lm['name'].lower().replace(' ', '_')}_{int(time.time())}_{random.randint(100,999)}",
@@ -665,8 +667,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                             "status": "pending"
                         })
                         new_puns_count += 1
-                
-                save_json(PUNS_FILE, puns)
+                    save_json(PUNS_FILE, puns)
                 self.send_response(200)
                 self.send_header('Content-type', 'application/json')
                 self.end_headers()
@@ -748,6 +749,8 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         )
                     )
                     generated = json.loads(response.text)
+                    # Reload the latest clues list from disk to avoid overwriting concurrent edits
+                    clues = load_json(CLUES_FILE, [])
                     clues.append({
                         "id": f"clue_{p['pun_name'].lower().replace(' ', '_')}_{int(time.time())}",
                         "original_name": p['original_name'],
@@ -762,8 +765,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         "status": "pending"
                     })
                     new_clues_count += 1
-                
-                save_json(CLUES_FILE, clues)
+                    save_json(CLUES_FILE, clues)
                 self.send_response(200)
                 self.send_header('Content-type', 'application/json')
                 self.end_headers()
@@ -880,6 +882,8 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                     if not saved_image:
                         raise Exception("No image returned in response parts from imagen-4.0-generate-001")
                         
+                    # Reload the latest postcards list from disk to avoid overwriting concurrent edits
+                    postcards = load_json(POSTCARDS_FILE, [])
                     existing_idx = next((i for i, p in enumerate(postcards) if p['clue_id'] == c['id']), None)
                     postcard_entry = {
                         "id": f"postcard_{c['id']}_{int(time.time())}" if existing_idx is None else postcards[existing_idx]["id"],
@@ -891,7 +895,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                         "art_style": style_key,
                         "owner_response": c['owner_response'],
                         "page_theme": c.get('page_theme', 'road_trip'),
-                        "status": "pending"
+                        "status": "pending" if existing_idx is None else postcards[existing_idx].get("status", "pending")
                     }
                     
                     if existing_idx is not None:
@@ -899,8 +903,7 @@ class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
                     else:
                         postcards.append(postcard_entry)
                     new_postcards_count += 1
-                    
-                save_json(POSTCARDS_FILE, postcards)
+                    save_json(POSTCARDS_FILE, postcards)
                 self.send_response(200)
                 self.send_header('Content-type', 'application/json')
                 self.end_headers()
