@@ -17,7 +17,7 @@ def draw_base_stamp(draw, color, shape='circle'):
         # Outer thick border
         draw.ellipse([15, 15, 235, 235], outline=color, width=4)
         # Inner thin border
-        draw.ellipse([25, 25, 225, 225], outline=color, width=1.5)
+        draw.ellipse([25, 25, 225, 225], outline=color, width=1)
         # Add some stars or dots in the border area
         for i in range(12):
             angle = i * (2 * math.pi / 12)
@@ -40,7 +40,7 @@ def draw_base_stamp(draw, color, shape='circle'):
     elif shape == 'diamond':
         # Draw a diamond shaped stamp
         draw.polygon([(125, 15), (235, 125), (125, 235), (15, 125)], outline=color, width=4)
-        draw.polygon([(125, 25), (225, 125), (125, 225), (25, 125)], outline=color, width=1.5)
+        draw.polygon([(125, 25), (225, 125), (125, 225), (25, 125)], outline=color, width=1)
 
 # 1. ANCIENT RUINS: stamp_ancient_pyramid.png
 def make_ancient_pyramid():
@@ -215,7 +215,7 @@ def make_cathedral_window():
         mid_angle = angle + (math.pi / 12)
         px = cx + 42 * math.cos(mid_angle)
         py = cy + 42 * math.sin(mid_angle)
-        draw.ellipse([px-6, py-6, px+6, py+6], outline=color, width=1.5)
+        draw.ellipse([px-6, py-6, px+6, py+6], outline=color, width=2)
     img.save(os.path.join(src_dir, 'stamp_cathedral_window.png'))
 
 # 9. BRIDGES_CANALS: stamp_bridge_arch.png

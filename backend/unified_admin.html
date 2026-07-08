@@ -1556,6 +1556,16 @@
             return String(Math.max(0, daysElapsed) + 1).padStart(3, '0');
         }
 
+        function tt_getTodayChallengeStr() {
+            const START_DATE_PT = new Date("2026-07-04T02:00:00-07:00");
+            const now = new Date();
+            const nowInPT = new Date(now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+            const startInPT = new Date(START_DATE_PT.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+            const diffMs = nowInPT.getTime() - startInPT.getTime();
+            const daysElapsed = Math.floor(diffMs / (24 * 60 * 60 * 1000));
+            return String(Math.max(0, daysElapsed) + 1).padStart(3, '0');
+        }
+
         // UI State
         let activeQuoteId = null;
         let activeSelectionWord = null;
@@ -4060,18 +4070,47 @@
                 if (activeChallenges.length === 0) {
                     sortListEl.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--text-muted); padding:20px;">No scheduled challenges.</td></tr>';
                 } else {
+                    const todayChallengeStr = tt_getTodayChallengeStr();
                     sortListEl.innerHTML = activeChallenges.map((p, idx) => {
                         const puzzleIdx = tt_puzzles.indexOf(p);
+                        const isToday = p.puzzle_number === todayChallengeStr;
+                        const isPrevious = parseInt(p.puzzle_number) < parseInt(todayChallengeStr);
+
+                        let rowStyles = '';
+                        let badgeHtml = '';
+                        let inputHtml = '';
+                        let actionsHtml = '';
+
+                        if (isPrevious) {
+                            rowStyles = 'background: rgba(0, 0, 0, 0.02); opacity: 0.8; border-left: 4px solid var(--text-muted);';
+                            badgeHtml = `<span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background: rgba(255, 255, 255, 0.08); color: var(--text-muted); font-weight:700; margin-left: 8px;">🔒 LOCKED</span>`;
+                            inputHtml = `<input type="text" value="${p.puzzle_number || ''}" style="width:50px; text-align:center; padding:3px 6px; font-weight: 700; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-muted); opacity: 0.6;" disabled>`;
+                            actionsHtml = `<span style="font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing:0.5px;">🔒 FIXED</span>`;
+                        } else if (isToday) {
+                            rowStyles = 'background: rgba(0, 245, 212, 0.04); border-left: 4px solid var(--emerald);';
+                            badgeHtml = `<span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background: rgba(0, 245, 212, 0.2); color: var(--emerald); font-weight:700; margin-left: 8px;">⭐ TODAY</span>`;
+                            inputHtml = `<input type="text" value="${p.puzzle_number || ''}" style="width:50px; text-align:center; padding:3px 6px; font-weight: 800; border-radius: 4px; border: 2px solid var(--emerald); background: var(--bg-input); color: var(--text-primary);" onchange="tt_updateChallengeNumber(${puzzleIdx}, this.value)">`;
+                            actionsHtml = `
+                                <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px; margin-right:4px;" onclick="tt_movePuzzleInTable(${idx}, -1)">🔼</button>
+                                <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px;" onclick="tt_movePuzzleInTable(${idx}, 1)">🔽</button>
+                            `;
+                        } else {
+                            inputHtml = `<input type="text" value="${p.puzzle_number || ''}" style="width:50px; text-align:center; padding:3px 6px; font-weight: 700; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-primary);" onchange="tt_updateChallengeNumber(${puzzleIdx}, this.value)">`;
+                            actionsHtml = `
+                                <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px; margin-right:4px;" onclick="tt_movePuzzleInTable(${idx}, -1)">🔼</button>
+                                <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px;" onclick="tt_movePuzzleInTable(${idx}, 1)">🔽</button>
+                            `;
+                        }
+
                         return `
-                            <tr onclick="if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA' && event.target.tagName !== 'BUTTON') tt_scrollToPuzzleCard(${idx})">
+                            <tr style="${rowStyles}" onclick="if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA' && event.target.tagName !== 'BUTTON') tt_scrollToPuzzleCard(${idx})">
                                 <td style="padding: 10px; font-weight:700; color:var(--text-muted);">${idx + 1}</td>
                                 <td style="padding: 10px;">
-                                    <input type="text" value="${p.puzzle_number || ''}" style="width:50px; text-align:center; padding:3px 6px; font-weight: 700; border-radius: 4px; border: 1px solid var(--border-base); background: var(--bg-input); color: var(--text-primary);" onchange="tt_updateChallengeNumber(${puzzleIdx}, this.value)">
+                                    ${inputHtml}
                                 </td>
-                                <td style="padding: 10px; font-weight:600; color:var(--cyan);">${p.boss_pun_title}</td>
+                                <td style="padding: 10px; font-weight:600; color:var(--cyan);">${p.boss_pun_title}${badgeHtml}</td>
                                 <td style="padding: 10px; text-align: center;">
-                                    <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px; margin-right:4px;" onclick="tt_movePuzzleInTable(${idx}, -1)">🔼</button>
-                                    <button class="btn btn-secondary" style="padding:4px 8px; font-size:10px;" onclick="tt_movePuzzleInTable(${idx}, 1)">🔽</button>
+                                    ${actionsHtml}
                                 </td>
                             </tr>
                         `;
