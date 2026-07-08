@@ -561,7 +561,7 @@
     "id": "landmark_108_1783199003",
     "name": "Gamla Stan",
     "location": "Stockholm, Sweden",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_109_1783199003",
@@ -729,7 +729,7 @@
     "id": "landmark_139_1783199069",
     "name": "Zion National Park",
     "location": "Springdale, Utah, USA",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_140_1783199069",
@@ -741,7 +741,7 @@
     "id": "landmark_141_1783199069",
     "name": "Brooklyn Bridge",
     "location": "New York City, New York, USA",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_142_1783199069",
@@ -759,7 +759,7 @@
     "id": "landmark_144_1783199069",
     "name": "Cloud Gate",
     "location": "Chicago, Illinois, USA",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_145_1783199069",
@@ -975,13 +975,13 @@
     "id": "landmark_188_1783199069",
     "name": "Amazon Rainforest",
     "location": "Amazonas, Brazil",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_189_1783199069",
     "name": "Copacabana Beach",
     "location": "Rio de Janeiro, Brazil",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_190_1783199069",
@@ -1023,13 +1023,13 @@
     "id": "landmark_196_1783199069",
     "name": "Nazca Lines",
     "location": "Nazca, Peru",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_197_1783199069",
     "name": "Lake Titicaca",
     "location": "Puno, Peru",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_198_1783199069",
@@ -1047,7 +1047,7 @@
     "id": "landmark_200_1783199069",
     "name": "Sacred Valley of the Incas",
     "location": "Cusco Region, Peru",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_201_1783199069",
@@ -1125,7 +1125,7 @@
     "id": "landmark_213_1783199069",
     "name": "Atacama Desert",
     "location": "Northern Chile",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_214_1783199069",
@@ -1173,13 +1173,13 @@
     "id": "landmark_221_1783199069",
     "name": "Galapagos Islands",
     "location": "Ecuador",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_222_1783199069",
     "name": "Cotopaxi Volcano",
     "location": "Cotopaxi Province, Ecuador",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_223_1783199069",
@@ -1992,16 +1992,10 @@
     "status": "pending"
   },
   {
-    "id": "landmark_358_1783199138",
-    "name": "Giza Pyramids and Sphinx",
-    "location": "Giza, Egypt",
-    "status": "pending"
-  },
-  {
     "id": "landmark_359_1783199138",
     "name": "Valley of the Kings",
     "location": "Luxor, Egypt",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_360_1783199138",
@@ -2025,19 +2019,19 @@
     "id": "landmark_363_1783199138",
     "name": "Victoria Falls",
     "location": "Livingstone, Zambia",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_364_1783199138",
     "name": "Serengeti National Park",
     "location": "Tanzania",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_365_1783199138",
     "name": "Mount Kilimanjaro",
     "location": "Tanzania",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_366_1783199138",
@@ -2151,7 +2145,7 @@
     "id": "landmark_384_1783199138",
     "name": "Volcanoes National Park",
     "location": "Musanze, Rwanda",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "landmark_385_1783199138",

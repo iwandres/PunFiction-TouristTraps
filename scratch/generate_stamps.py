@@ -42,211 +42,151 @@ def draw_base_stamp(draw, color, shape='circle'):
         draw.polygon([(125, 15), (235, 125), (125, 235), (15, 125)], outline=color, width=4)
         draw.polygon([(125, 25), (225, 125), (125, 225), (25, 125)], outline=color, width=1)
 
-# 1. ANCIENT RUINS: stamp_ancient_pyramid.png
-def make_ancient_pyramid():
+# Helper to draw a vector 'N'
+def draw_letter_n(draw, x, y, w, h, color, width=3):
+    draw.line([(x, y+h), (x, y)], fill=color, width=width)
+    draw.line([(x, y), (x+w, y+h)], fill=color, width=width)
+    draw.line([(x+w, y+h), (x+w, y)], fill=color, width=width)
+
+# Helper to draw a vector 'S'
+def draw_letter_s(draw, x, y, w, h, color, width=3):
+    draw.line([(x+w, y), (x, y)], fill=color, width=width)
+    draw.line([(x, y), (x, y+h/2)], fill=color, width=width)
+    draw.line([(x, y+h/2), (x+w, y+h/2)], fill=color, width=width)
+    draw.line([(x+w, y+h/2), (x+w, y+h)], fill=color, width=width)
+    draw.line([(x+w, y+h), (x, y+h)], fill=color, width=width)
+
+# Helper to draw a vector 'E'
+def draw_letter_e(draw, x, y, w, h, color, width=3):
+    draw.line([(x+w, y), (x, y)], fill=color, width=width)
+    draw.line([(x, y), (x, y+h)], fill=color, width=width)
+    draw.line([(x, y+h/2), (x+w*0.8, y+h/2)], fill=color, width=width)
+    draw.line([(x, y+h), (x+w, y+h)], fill=color, width=width)
+
+# Helper to draw a vector 'W'
+def draw_letter_w(draw, x, y, w, h, color, width=3):
+    draw.line([(x, y), (x+w*0.25, y+h)], fill=color, width=width)
+    draw.line([(x+w*0.25, y+h), (x+w*0.5, y+h*0.3)], fill=color, width=width)
+    draw.line([(x+w*0.5, y+h*0.3), (x+w*0.75, y+h)], fill=color, width=width)
+    draw.line([(x+w*0.75, y+h), (x+w, y)], fill=color, width=width)
+
+
+# 1. stamp_airmail.png (Airmail sticker)
+def make_airmail():
     img = Image.new('RGBA', (250, 250), (0,0,0,0))
     draw = ImageDraw.Draw(img)
-    color = (135, 54, 0, 255) # Sienna Brown #873600
-    draw_base_stamp(draw, color, 'scallop')
-    # Draw Pyramid
-    draw.polygon([(125, 75), (65, 165), (125, 165)], fill=color) # Left side
-    draw.polygon([(125, 75), (125, 165), (185, 165)], outline=color, fill=(0,0,0,0), width=2) # Right side (wireframe/shaded)
-    # Shading lines on the right side
-    for y in range(85, 165, 10):
-        w = int((y - 75) * 60 / 90)
-        draw.line([(125, y), (125 + w, y)], fill=color, width=2)
-    # Horizon line
-    draw.line([(55, 165), (195, 165)], fill=color, width=3)
-    img.save(os.path.join(src_dir, 'stamp_ancient_pyramid.png'))
-
-# 2. ANCIENT RUINS: stamp_ancient_temple.png
-def make_ancient_temple():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (135, 54, 0, 255) # Sienna Brown #873600
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Greek Temple
-    # Roof (Triangle)
-    draw.polygon([(125, 70), (70, 95), (180, 95)], fill=color)
-    # Architrave (beam)
-    draw.rectangle([75, 95, 175, 103], fill=color)
-    # Columns (4 columns)
-    cols = [80, 107, 137, 163]
-    for x in cols:
-        draw.rectangle([x, 103, x+7, 155], fill=color)
-    # Base (Steps)
-    draw.rectangle([65, 155, 185, 163], fill=color)
-    draw.rectangle([60, 163, 190, 172], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_ancient_temple.png'))
-
-# 3. NATURAL WONDERS: stamp_natural_mountain.png
-def make_natural_mountain():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (30, 132, 73, 255) # Forest Green #1E8449
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Mountains
-    # Back mountain
-    draw.polygon([(125, 65), (65, 170), (185, 170)], fill=color)
-    # Foreground left mountain
-    draw.polygon([(90, 90), (45, 170), (135, 170)], fill=color)
-    # Foreground right mountain
-    draw.polygon([(160, 100), (110, 170), (210, 170)], fill=color)
-    # Snowcaps (White overlays)
-    draw.polygon([(125, 65), (110, 95), (140, 95)], fill=(255,255,255,255))
-    draw.polygon([(90, 90), (80, 110), (100, 110)], fill=(255,255,255,255))
-    draw.polygon([(160, 100), (150, 120), (170, 120)], fill=(255,255,255,255))
-    # Ground lines
-    draw.line([(40, 170), (210, 170)], fill=color, width=3)
-    img.save(os.path.join(src_dir, 'stamp_natural_mountain.png'))
-
-# 4. NATURAL WONDERS: stamp_natural_forest.png
-def make_natural_forest():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (30, 132, 73, 255) # Forest Green #1E8449
-    draw_base_stamp(draw, color, 'scallop')
-    # Draw three pine trees
-    def draw_tree(tx, ty, scale):
-        # Trunk
-        draw.rectangle([tx-3, ty, tx+3, ty+15*scale], fill=color)
-        # Foliage layers
-        draw.polygon([(tx, ty-30*scale), (tx-20*scale, ty-10*scale), (tx+20*scale, ty-10*scale)], fill=color)
-        draw.polygon([(tx, ty-18*scale), (tx-23*scale, ty+2*scale), (tx+23*scale, ty+2*scale)], fill=color)
-        draw.polygon([(tx, ty-5*scale), (tx-26*scale, ty+15*scale), (tx+26*scale, ty+15*scale)], fill=color)
-
-    draw_tree(125, 145, 1.1)  # Center main tree
-    draw_tree(85, 150, 0.8)   # Left tree
-    draw_tree(165, 150, 0.8)  # Right tree
-    # Base land line
-    draw.line([(55, 170), (195, 170)], fill=color, width=3)
-    img.save(os.path.join(src_dir, 'stamp_natural_forest.png'))
-
-# 5. HISTORIC MONUMENTS: stamp_monument_tower.png
-def make_monument_tower():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (183, 149, 11, 255) # Historic Gold #B7950B
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Eiffel Tower style lattice tower
-    # Base legs
-    draw.polygon([(85, 185), (105, 185), (115, 125), (95, 125)], fill=color) # Left leg
-    draw.polygon([(165, 185), (145, 185), (135, 125), (155, 125)], fill=color) # Right leg
-    # Arch between legs
-    draw.chord([98, 145, 152, 195], 180, 360, fill=(0,0,0,0), outline=color, width=3)
-    # First deck platform
-    draw.rectangle([92, 125, 158, 133], fill=color)
-    # Mid section
-    draw.polygon([(100, 125), (150, 125), (140, 85), (110, 85)], fill=color)
-    draw.rectangle([106, 85, 144, 91], fill=color) # Second deck
-    # Top spire
-    draw.polygon([(112, 85), (138, 85), (125, 45)], fill=color)
-    draw.line([(125, 45), (125, 33)], fill=color, width=3) # Spire tip
-    img.save(os.path.join(src_dir, 'stamp_monument_tower.png'))
-
-# 6. HISTORIC MONUMENTS: stamp_monument_statue.png
-def make_monument_statue():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (183, 149, 11, 255) # Historic Gold #B7950B
-    draw_base_stamp(draw, color, 'scallop')
-    # Draw Statue on Pedestal (Statue of Liberty style)
-    # Pedestal (steps)
-    draw.rectangle([95, 160, 155, 175], fill=color)
-    draw.rectangle([102, 140, 148, 160], fill=color)
-    # Body/Robes
-    draw.polygon([(112, 140), (138, 140), (132, 80), (118, 80)], fill=color)
-    # Head & Crown
-    draw.ellipse([120, 68, 130, 78], fill=color)
-    draw.polygon([(118, 70), (132, 70), (125, 62)], fill=color) # crown rays
-    # Raised Arm & Torch
-    draw.line([(130, 95), (142, 65)], fill=color, width=4) # arm
-    draw.ellipse([139, 58, 145, 65], fill=color) # torch
-    draw.polygon([(137, 60), (147, 60), (142, 50)], fill=color) # flame
-    # Left arm holding tablet
-    draw.rectangle([112, 100, 118, 115], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_monument_statue.png'))
-
-# 7. CASTLES_CATHEDRALS: stamp_castle_turret.png
-def make_castle_turret():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (125, 60, 152, 255) # Royal Purple #7D3C98
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Castle Turrets
-    # Main Central Keep
-    draw.rectangle([100, 100, 150, 170], fill=color)
-    # Battlements on Keep
-    draw.rectangle([96, 90, 154, 100], fill=color)
-    for x in range(96, 154, 14):
-        draw.rectangle([x+4, 84, x+10, 90], fill=color)
-    # Arched door
-    draw.ellipse([117, 145, 133, 170], fill=(255,255,255,255))
-    draw.rectangle([117, 157, 133, 170], fill=(255,255,255,255))
-    # Side turrets (narrower and taller)
-    draw.rectangle([75, 75, 95, 170], fill=color)
-    draw.polygon([(70, 75), (100, 75), (85, 45)], fill=color) # Cone roof left
-    draw.rectangle([155, 75, 175, 170], fill=color)
-    draw.polygon([(150, 75), (180, 75), (165, 45)], fill=color) # Cone roof right
-    # Flag on left roof
-    draw.line([(85, 45), (85, 30)], fill=color, width=2)
-    draw.polygon([(85, 30), (95, 35), (85, 40)], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_castle_turret.png'))
-
-# 8. CASTLES_CATHEDRALS: stamp_cathedral_window.png
-def make_cathedral_window():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (125, 60, 152, 255) # Royal Purple #7D3C98
-    draw_base_stamp(draw, color, 'scallop')
-    # Draw Gothic Rose Window geometry
-    cx, cy = 125, 125
-    r = 60
-    draw.ellipse([cx-r, cy-r, cx+r, cy+r], outline=color, width=3)
-    draw.ellipse([cx-20, cy-20, cx+20, cy+20], outline=color, width=2)
-    # Draw 12 spoke arches
-    for i in range(12):
-        angle = i * (2 * math.pi / 12)
-        x = cx + r * math.cos(angle)
-        y = cy + r * math.sin(angle)
-        draw.line([(cx, cy), (x, y)], fill=color, width=2)
+    color = (20, 52, 164, 255) # Royal Blue #1434A4
+    
+    # Rounded rectangle border
+    draw.rounded_rectangle([25, 60, 225, 190], radius=15, outline=color, width=4)
+    draw.rounded_rectangle([32, 67, 218, 183], radius=10, outline=color, width=1)
+    
+    # Draw red/blue diagonal stripes inside the margins
+    # We will draw a few stripes on the left/right edges
+    red_color = (200, 30, 30, 255)
+    blue_color = (20, 52, 164, 255)
+    
+    # Left border stripes
+    for i in range(4):
+        y_pos = 75 + i * 25
+        draw.line([(25, y_pos), (35, y_pos - 10)], fill=red_color, width=3)
+        draw.line([(25, y_pos + 12), (35, y_pos + 2)], fill=blue_color, width=3)
         
-        # Draw small petal circles in the sections
-        mid_angle = angle + (math.pi / 12)
-        px = cx + 42 * math.cos(mid_angle)
-        py = cy + 42 * math.sin(mid_angle)
-        draw.ellipse([px-6, py-6, px+6, py+6], outline=color, width=2)
-    img.save(os.path.join(src_dir, 'stamp_cathedral_window.png'))
+    # Right border stripes
+    for i in range(4):
+        y_pos = 75 + i * 25
+        draw.line([(215, y_pos), (225, y_pos - 10)], fill=red_color, width=3)
+        draw.line([(215, y_pos + 12), (225, y_pos + 2)], fill=blue_color, width=3)
+        
+    # Draw envelope icon in center
+    cx, cy = 125, 125
+    draw.rectangle([cx-35, cy-20, cx+35, cy+20], outline=color, width=3)
+    draw.line([(cx-35, cy-20), (cx, cy+5)], fill=color, width=3)
+    draw.line([(cx+35, cy-20), (cx, cy+5)], fill=color, width=3)
+    
+    # Airmail text indicators (AirMail, Par Avion)
+    # Just draw simple vector bars representing text lines for stylized watermark look
+    draw.line([(cx-40, 80), (cx+40, 80)], fill=color, width=4)
+    draw.line([(cx-25, 92), (cx+25, 92)], fill=color, width=2)
+    draw.line([(cx-30, 160), (cx+30, 160)], fill=color, width=3)
+    draw.line([(cx-15, 170), (cx+15, 170)], fill=color, width=2)
+    
+    img.save(os.path.join(src_dir, 'stamp_airmail.png'))
 
-# 9. BRIDGES_CANALS: stamp_bridge_arch.png
-def make_bridge_arch():
+
+# 2. stamp_compass.png (Compass Rose)
+def make_compass():
     img = Image.new('RGBA', (250, 250), (0,0,0,0))
     draw = ImageDraw.Draw(img)
-    color = (14, 102, 85, 255) # Deep Teal #0E6655
+    color = (135, 54, 0, 255) # Sienna Brown
     draw_base_stamp(draw, color, 'circle')
-    # Draw Arch Bridge
-    # Water line/waves
-    draw.line([(40, 160), (210, 160)], fill=color, width=2)
-    for x in range(45, 205, 15):
-        draw.arc([x, 158, x+12, 166], 0, 180, fill=color, width=2)
-    # Bridge deck
-    draw.rectangle([50, 120, 200, 130], fill=color)
-    # Support piers & arches
-    draw.rectangle([60, 130, 75, 160], fill=color)
-    draw.rectangle([115, 130, 135, 160], fill=color)
-    draw.rectangle([175, 130, 190, 160], fill=color)
-    # Arches under deck
-    draw.chord([75, 128, 115, 162], 180, 360, fill=(0,0,0,0), outline=color, width=4)
-    draw.chord([135, 128, 175, 162], 180, 360, fill=(0,0,0,0), outline=color, width=4)
-    img.save(os.path.join(src_dir, 'stamp_bridge_arch.png'))
+    
+    cx, cy = 125, 125
+    # Inner ring
+    draw.ellipse([cx-75, cy-75, cx+75, cy+75], outline=color, width=2)
+    
+    # Compass Points (8 points star)
+    # N, S, E, W
+    draw.polygon([(cx, cy), (cx-10, cy-15), (cx, cy-65), (cx+10, cy-15)], fill=color) # North point
+    draw.polygon([(cx, cy), (cx-10, cy+15), (cx, cy+65), (cx+10, cy+15)], fill=color) # South point
+    draw.polygon([(cx, cy), (cx-15, cy-10), (cx-65, cy), (cx-15, cy+10)], fill=color) # West point
+    draw.polygon([(cx, cy), (cx+15, cy-10), (cx+65, cy), (cx+15, cy+10)], fill=color) # East point
+    
+    # NE, NW, SE, SW (smaller)
+    draw.polygon([(cx, cy), (cx-3, cy-12), (cx-35, cy-35), (cx-12, cy-3)], fill=color)
+    draw.polygon([(cx, cy), (cx+3, cy-12), (cx+35, cy-35), (cx+12, cy-3)], fill=color)
+    draw.polygon([(cx, cy), (cx-3, cy+12), (cx-35, cy+35), (cx-12, cy+3)], fill=color)
+    draw.polygon([(cx, cy), (cx+3, cy+12), (cx+35, cy+35), (cx+12, cy+3)], fill=color)
+    
+    # Vector Letters N, S, E, W
+    draw_letter_n(draw, cx-6, cy-88, 12, 14, color, width=3)
+    draw_letter_s(draw, cx-5, cy+72, 10, 14, color, width=3)
+    draw_letter_w(draw, cx-85, cy-7, 14, 14, color, width=3)
+    draw_letter_e(draw, cx+74, cy-7, 10, 14, color, width=3)
+    
+    img.save(os.path.join(src_dir, 'stamp_compass.png'))
 
-# 10. BRIDGES_CANALS: stamp_nautical_anchor.png
-def make_nautical_anchor():
+
+# 3. stamp_globe.png (Globe / Grid)
+def make_globe():
     img = Image.new('RGBA', (250, 250), (0,0,0,0))
     draw = ImageDraw.Draw(img)
-    color = (14, 102, 85, 255) # Deep Teal #0E6655
+    color = (27, 79, 114, 255) # Midnight Blue
+    draw_base_stamp(draw, color, 'scallop')
+    
+    cx, cy = 125, 125
+    r = 65
+    draw.ellipse([cx-r, cy-r, cx+r, cy+r], outline=color, width=4)
+    
+    # Equator and Latitude lines
+    draw.line([(cx-r, cy), (cx+r, cy)], fill=color, width=3)
+    draw.arc([cx-r, cy-r, cx+r, cy+r], 20, 160, fill=color, width=2)
+    draw.arc([cx-r, cy-r, cx+r, cy+r], 200, 340, fill=color, width=2)
+    
+    # Longitude lines (ellipses)
+    draw.ellipse([cx-r*0.6, cy-r, cx+r*0.6, cy+r], outline=color, width=2)
+    draw.ellipse([cx-r*0.25, cy-r, cx+r*0.25, cy+r], outline=color, width=2)
+    draw.line([(cx, cy-r), (cx, cy+r)], fill=color, width=2)
+    
+    # Tiny plane silhouette flying around it
+    px, py = cx+40, cy-40
+    # Wings
+    draw.line([(px-15, py+8), (px+15, py-8)], fill=color, width=4)
+    # Fuselage
+    draw.line([(px-10, py-10), (px+10, py+10)], fill=color, width=6)
+    # Tail
+    draw.line([(px-13, py-3), (px-8, py-8)], fill=color, width=3)
+    
+    img.save(os.path.join(src_dir, 'stamp_globe.png'))
+
+
+# 4. stamp_anchor.png (Nautical Anchor)
+def make_anchor():
+    img = Image.new('RGBA', (250, 250), (0,0,0,0))
+    draw = ImageDraw.Draw(img)
+    color = (14, 102, 85, 255) # Deep Teal
     draw_base_stamp(draw, color, 'diamond')
-    # Draw Anchor
+    
     cx, cy = 125, 130
     # Center shank (vertical line)
     draw.line([(cx, cy-60), (cx, cy+50)], fill=color, width=6)
@@ -259,139 +199,208 @@ def make_nautical_anchor():
     # Flukes (triangles on ends of curve)
     draw.polygon([(cx-50, cy+32), (cx-58, cy+40), (cx-42, cy+45)], fill=color)
     draw.polygon([(cx+50, cy+32), (cx+58, cy+40), (cx+42, cy+45)], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_nautical_anchor.png'))
+    img.save(os.path.join(src_dir, 'stamp_anchor.png'))
 
-# 11. STREETS_SQUARES: stamp_street_lamp.png
-def make_street_lamp():
+
+# 5. stamp_luggage.png (Luggage Tag)
+def make_luggage():
     img = Image.new('RGBA', (250, 250), (0,0,0,0))
     draw = ImageDraw.Draw(img)
-    color = (186, 74, 0, 255) # Terracotta Orange #BA4A00
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Vintage Street Lamp
-    cx = 125
-    # Pole
-    draw.line([(cx, 75), (cx, 185)], fill=color, width=5)
-    draw.rectangle([cx-10, 175, cx+10, 185], fill=color) # base
-    # Decorative arms/scrollwork
-    draw.arc([cx-25, 75, cx+25, 105], 180, 360, fill=color, width=3)
-    # Central Lantern
-    draw.polygon([(cx-12, 70), (cx+12, 70), (cx+8, 48), (cx-8, 48)], fill=color) # Cap
-    draw.polygon([(cx-10, 70), (cx+10, 70), (cx+6, 95), (cx-6, 95)], outline=color, fill=(0,0,0,0), width=3) # glass cage
-    draw.line([(cx, 95), (cx, 110)], fill=color, width=4) # bottom post support
-    draw.ellipse([cx-4, 80, cx+4, 88], fill=color) # light bulb
-    img.save(os.path.join(src_dir, 'stamp_street_lamp.png'))
-
-# 12. STREETS_SQUARES: stamp_vintage_car.png
-def make_vintage_car():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (186, 74, 0, 255) # Terracotta Orange #BA4A00
+    color = (186, 74, 0, 255) # Terracotta Orange
+    
+    # Diamond/Scalloped hybrid border for visual variety
     draw_base_stamp(draw, color, 'scallop')
-    # Draw Retro Car Silhouette
-    # Wheels
-    draw.ellipse([80, 150, 105, 175], fill=color)
-    draw.ellipse([145, 150, 170, 175], fill=color)
-    draw.ellipse([87, 157, 98, 168], fill=(255,255,255,255))
-    draw.ellipse([152, 157, 163, 168], fill=(255,255,255,255))
-    # Car Body
-    draw.polygon([
-        (60, 155), (190, 155), (190, 135), (175, 135),
-        (160, 115), (110, 115), (95, 135), (60, 135)
-    ], fill=color)
-    # Windshield/Window cutout (White shape)
-    draw.polygon([
-        (102, 118), (123, 118), (123, 132), (105, 132)
-    ], fill=(255,255,255,255))
-    draw.polygon([
-        (127, 118), (155, 118), (163, 132), (127, 132)
-    ], fill=(255,255,255,255))
-    # Bumpers
-    draw.rectangle([50, 148, 62, 154], fill=color)
-    draw.rectangle([188, 148, 200, 154], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_vintage_car.png'))
-
-# 13. MODERN_SKYSCRAPERS: stamp_modern_skyline.png
-def make_modern_skyline():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (27, 79, 114, 255) # Midnight Blue #1B4F72
-    draw_base_stamp(draw, color, 'circle')
-    # Draw Skyscrapers
-    # Building 1 (Tall center)
-    draw.rectangle([110, 60, 140, 175], fill=color)
-    draw.polygon([(110, 60), (140, 60), (125, 40)], fill=color) # Spire roof
-    draw.line([(125, 40), (125, 25)], fill=color, width=2) # Spire tip
-    # Building 2 (Left angular)
-    draw.polygon([(70, 95), (105, 75), (105, 175), (70, 175)], fill=color)
-    # Building 3 (Right blocky)
-    draw.rectangle([145, 80, 180, 175], fill=color)
-    # Building 4 (Far left small)
-    draw.rectangle([50, 120, 67, 175], fill=color)
-    # Building 5 (Far right small)
-    draw.rectangle([183, 110, 198, 175], fill=color)
-    # Tiny window dots (white)
-    window_cols = [77, 87, 116, 124, 132, 152, 162, 172]
-    for x in window_cols:
-        for y in range(100, 170, 15):
-            # Only draw if inside building bounds
-            if x < 105 and y < 85: continue
-            if x > 145 and y < 90: continue
-            if x > 110 and x < 140 and y < 70: continue
-            draw.rectangle([x, y, x+3, y+4], fill=(255,255,255,255))
-    img.save(os.path.join(src_dir, 'stamp_modern_skyline.png'))
-
-# 14. MODERN_SKYSCRAPERS: stamp_modern_jet.png
-def make_modern_jet():
-    img = Image.new('RGBA', (250, 250), (0,0,0,0))
-    draw = ImageDraw.Draw(img)
-    color = (27, 79, 114, 255) # Midnight Blue #1B4F72
-    draw_base_stamp(draw, color, 'diamond')
-    # Draw modern swept-wing jet outline/silhouette at a 45-degree angle
+    
     cx, cy = 125, 125
-    # Center fuselage
+    # Draw a rotated luggage tag silhouette in the center
+    # Rotated coordinate helper
+    # Center is 125,125. We will draw a rectangular tag rotated 30 degrees.
+    # To keep code simple, let's draw a beautiful tag shape aligned or slightly tilted
+    # Aligned luggage tag is very clean. Let's draw it tilted at 30 deg.
+    # Tag corners (tilted):
     draw.polygon([
-        (cx-50, cy+50), (cx+50, cy-50), # tail to nose
-        (cx+45, cy-38), (cx-38, cy+45)  # side widths
+        (85, 145), (145, 85), (175, 115), (115, 175)
+    ], outline=color, width=4)
+    # Top triangular part of the tag
+    draw.polygon([
+        (85, 145), (115, 175), (80, 170)
     ], fill=color)
-    # Nose cone
-    draw.polygon([(cx+40, cy-48), (cx+52, cy-52), (cx+48, cy-40)], fill=color)
+    
+    # Hole and string
+    draw.ellipse([92, 150, 102, 160], fill=(255,255,255,255), outline=color, width=2)
+    draw.line([(97, 155), (70, 180)], fill=color, width=3)
+    
+    # Barcode lines inside tag
+    # Drawing lines orthogonal to tag direction (45 deg)
+    # We can draw 6 small parallel stripes
+    draw.line([(115, 110), (135, 130)], fill=color, width=5)
+    draw.line([(123, 118), (138, 133)], fill=color, width=2)
+    draw.line([(129, 124), (144, 139)], fill=color, width=4)
+    draw.line([(137, 132), (152, 147)], fill=color, width=6)
+    
+    img.save(os.path.join(src_dir, 'stamp_luggage.png'))
+
+
+# 6. stamp_passport_entry.png (Passport entry stamp)
+def make_passport_entry():
+    img = Image.new('RGBA', (250, 250), (0,0,0,0))
+    draw = ImageDraw.Draw(img)
+    color = (125, 60, 152, 255) # Royal Purple
+    
+    # Rectangular entry stamp frame
+    draw.rounded_rectangle([30, 45, 220, 205], radius=15, outline=color, width=5)
+    draw.rounded_rectangle([38, 53, 212, 197], radius=10, outline=color, width=1)
+    
+    cx, cy = 125, 125
+    # Inner divider lines
+    draw.line([(38, 90), (212, 90)], fill=color, width=2)
+    draw.line([(38, 160), (212, 160)], fill=color, width=2)
+    
+    # Top Text lines (represented as vector bars for generic stamps look)
+    draw.line([(60, 70), (190, 70)], fill=color, width=3)
+    draw.line([(80, 80), (170, 80)], fill=color, width=2)
+    
+    # Middle Date "04 JUL 2026" written in clean vector lines
+    # We can draw "JUL 2026" or similar
+    # 0 4
+    draw.line([(55, 110), (55, 140)], fill=color, width=3)
+    draw.line([(55, 110), (67, 110)], fill=color, width=3)
+    draw.line([(67, 110), (67, 140)], fill=color, width=3) # '0'
+    
+    draw.line([(78, 110), (78, 125)], fill=color, width=3)
+    draw.line([(78, 125), (90, 125)], fill=color, width=3)
+    draw.line([(90, 110), (90, 140)], fill=color, width=3) # '4'
+    
+    # J U L
+    # J
+    draw.line([(105, 110), (117, 110)], fill=color, width=3)
+    draw.line([(111, 110), (111, 135)], fill=color, width=3)
+    draw.chord([103, 125, 115, 140], 0, 180, fill=(0,0,0,0), outline=color, width=3)
+    
+    # U
+    draw.line([(125, 110), (125, 135)], fill=color, width=3)
+    draw.line([(137, 110), (137, 135)], fill=color, width=3)
+    draw.arc([125, 125, 137, 140], 0, 180, fill=color, width=3)
+    
+    # L
+    draw.line([(145, 110), (145, 140)], fill=color, width=3)
+    draw.line([(145, 140), (157, 140)], fill=color, width=3)
+    
+    # 2 0 2 6
+    # Simple line bars for the year to keep it clean
+    draw.line([(168, 115), (195, 115)], fill=color, width=3)
+    draw.line([(168, 127), (195, 127)], fill=color, width=3)
+    draw.line([(168, 139), (195, 139)], fill=color, width=3)
+    
+    # Bottom section has a small star and code
+    draw.ellipse([cx-6, 178, cx+6, 190], fill=color)
+    draw.line([(48, 184), (105, 184)], fill=color, width=2)
+    draw.line([(145, 184), (202, 184)], fill=color, width=2)
+    
+    img.save(os.path.join(src_dir, 'stamp_passport_entry.png'))
+
+
+# 7. stamp_cancelled.png (Postage cancelled wavy lines)
+def make_cancelled():
+    img = Image.new('RGBA', (250, 250), (0,0,0,0))
+    draw = ImageDraw.Draw(img)
+    color = (84, 110, 122, 255) # Slate Gray
+    
+    # A circular postmark stamp on the left side
+    cx, cy = 80, 125
+    draw.ellipse([cx-55, cy-55, cx+55, cy+55], outline=color, width=3)
+    draw.ellipse([cx-48, cy-48, cx+48, cy+48], outline=color, width=1)
+    
+    # Inner details
+    draw.line([(cx-35, cy), (cx+35, cy)], fill=color, width=2)
+    draw.line([(cx-25, cy-15), (cx+25, cy-15)], fill=color, width=3)
+    draw.line([(cx-25, cy+15), (cx+25, cy+15)], fill=color, width=3)
+    
+    # 5 Long wavy cancellation lines crossing from left to right across the page
+    for offset_y in range(-60, 80, 30):
+        # We will draw a sine wave representation with lines
+        points = []
+        for x in range(15, 235, 10):
+            # Wave equation: y = amplitude * sin(frequency * x) + base_y
+            y = cy + offset_y + 12 * math.sin(x * 0.05)
+            points.append((x, y))
+        draw.line(points, fill=color, width=2)
+        
+    img.save(os.path.join(src_dir, 'stamp_cancelled.png'))
+
+
+# 8. stamp_airplane.png (Airplane Silhouette)
+def make_airplane():
+    img = Image.new('RGBA', (250, 250), (0,0,0,0))
+    draw = ImageDraw.Draw(img)
+    color = (20, 90, 160, 255) # Ocean Blue
+    draw_base_stamp(draw, color, 'circle')
+    
+    cx, cy = 125, 125
+    # Inner dotted border
+    for i in range(36):
+        angle = i * (2 * math.pi / 36)
+        x = cx + 80 * math.cos(angle)
+        y = cy + 80 * math.sin(angle)
+        draw.ellipse([x-1.5, y-1.5, x+1.5, y+1.5], fill=color)
+        
+    # Draw a stylized commercial passenger jet silhouette flying at 45 degrees
+    # Center is cx,cy. Fuselage length: 110px. Wingspan: 100px.
+    # Tilted coords
+    # Nose at cx+45, cy-45. Tail at cx-55, cy+55.
+    
     # Main wings (swept back)
     draw.polygon([
-        (cx-5, cy+5), # center root
-        (cx-45, cy-45), # left wingtip
-        (cx-25, cy-15)  # swept back point
+        (cx-10, cy+10),
+        (cx-50, cy-20),
+        (cx-52, cy-10),
+        (cx-25, cy+25)
     ], fill=color)
     draw.polygon([
-        (cx-5, cy+5), # center root
-        (cx+45, cy+45), # right wingtip
-        (cx+15, cy+25)  # swept back point
+        (cx-10, cy+10),
+        (cx+20, cy+50),
+        (cx+10, cy+52),
+        (cx-25, cy+25)
     ], fill=color)
-    # Tail wings
+    
+    # Fuselage body (cigar shape)
     draw.polygon([
-        (cx-38, cy+38), (cx-58, cy+25), (cx-45, cy+33)
+        (cx+48, cy-48), # Nose
+        (cx+25, cy-15),
+        (cx-55, cy+55), # Tail tip
+        (cx-15, cy+25)
+    ], fill=color)
+    # Smooth nose shape
+    draw.ellipse([cx+38, cy-48, cx+48, cy-38], fill=color)
+    
+    # Tailplane (horizontal stabilizers at the tail)
+    draw.polygon([
+        (cx-48, cy+48),
+        (cx-65, cy+38),
+        (cx-67, cy+42),
+        (cx-53, cy+53)
     ], fill=color)
     draw.polygon([
-        (cx-38, cy+38), (cx-25, cy+58), (cx-33, cy+45)
+        (cx-48, cy+48),
+        (cx-38, cy+65),
+        (cx-42, cy+67),
+        (cx-53, cy+53)
     ], fill=color)
-    img.save(os.path.join(src_dir, 'stamp_modern_jet.png'))
+    
+    img.save(os.path.join(src_dir, 'stamp_airplane.png'))
 
-# Generate all 14 stamps
-make_ancient_pyramid()
-make_ancient_temple()
-make_natural_mountain()
-make_natural_forest()
-make_monument_tower()
-make_monument_statue()
-make_castle_turret()
-make_cathedral_window()
-make_bridge_arch()
-make_nautical_anchor()
-make_street_lamp()
-make_vintage_car()
-make_modern_skyline()
-make_modern_jet()
 
-print("Generated 14 vector travel stamps successfully.")
+# Generate all 8 neutral stamps
+make_airmail()
+make_compass()
+make_globe()
+make_anchor()
+make_luggage()
+make_passport_entry()
+make_cancelled()
+make_airplane()
+
+print("Generated 8 neutral vector travel stamps successfully.")
 
 # Copy all new stamps to the BoxOffice travelreviews/assets/stamps/ directory
 files = os.listdir(src_dir)
