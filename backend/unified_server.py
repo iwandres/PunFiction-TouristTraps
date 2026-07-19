@@ -222,6 +222,13 @@ def save_json(filepath, data):
         return False
 
 class UnifiedRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, format, *args):
+        sys.stderr.write("%s - - [%s] %s\n" %
+                         (self.address_string(),
+                          self.log_date_time_string(),
+                          format%args))
+        sys.stderr.flush()
+
     def end_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
