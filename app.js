@@ -583,6 +583,8 @@ window.onload = async () => {
 
     if (btnSettings) btnSettings.onclick = openSettingsModal;
     if (btnSettingsVic) btnSettingsVic.onclick = openSettingsModal;
+    const headerStreakBadge = document.getElementById('header-streak-badge');
+    if (headerStreakBadge) headerStreakBadge.onclick = openSettingsModal;
 
     if (btnCloseSettings) {
         btnCloseSettings.onclick = () => {
@@ -680,6 +682,9 @@ window.onload = async () => {
     // 3. Initialize hover-based daily streak tooltip for desktop users
     initStreakTooltip();
     initNextButtonVictoryTooltip();
+    
+    // Update daily solve streak badge next to the app header
+    updateHeaderStreak();
 };
 
 function getDaysElapsedSinceStart() {
@@ -830,6 +835,9 @@ function savePuzzleSolved(puzzleNum) {
 
         // Push solved status to backend profile sync
         postUserProfile();
+
+        // Update daily solve streak badge next to the app header
+        updateHeaderStreak();
     } catch (e) {
         console.error("Could not write solved progress to local storage", e);
     }
@@ -1034,6 +1042,9 @@ async function fetchAndMergeProfile(serverProfileId) {
         
         // 6. Push merged state back to server to make it fully synchronous
         await postUserProfile();
+        
+        // Update daily solve streak badge next to the app header
+        updateHeaderStreak();
         
         return true;
     } catch (e) {
@@ -3056,5 +3067,26 @@ function initNextButtonVictoryTooltip() {
         nextBtnVic.addEventListener('mouseleave', () => {
             tooltip.classList.add('hidden');
         });
+    }
+}
+
+// Update the daily solve streak badge next to the app header
+function updateHeaderStreak() {
+    try {
+        const solvedList = getSolvedPuzzlesList();
+        const { currentStreak } = calculateStreakMetrics(solvedList);
+        const badge = document.getElementById('header-streak-badge');
+        const countEl = document.getElementById('header-streak-count');
+        
+        if (!badge || !countEl) return;
+        
+        if (currentStreak >= 2) {
+            countEl.innerText = currentStreak;
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+    } catch (e) {
+        console.error("Failed to update header streak:", e);
     }
 }
